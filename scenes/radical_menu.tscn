@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://bsd6tbqm3y5vc"]
+
+[ext_resource type="Script" uid="uid://cquli3ybdyu2g" path="res://scripts/radical_menu.gd" id="1_iwyq8"]
+[ext_resource type="PackedScene" uid="uid://vw8kanq8gywl" path="res://scenes/radical.tscn" id="2_mvg4f"]
+
+[node name="RadicalMenu" type="GridContainer" unique_id=530804148]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 24
+script = ExtResource("1_iwyq8")
+radical_item_scene = ExtResource("2_mvg4f")
+
+[node name="Radical" parent="." unique_id=1127722633 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical2" parent="." unique_id=153932783 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical3" parent="." unique_id=1080756521 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical4" parent="." unique_id=654270467 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical5" parent="." unique_id=1406236471 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical6" parent="." unique_id=13537694 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical7" parent="." unique_id=1602627121 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical8" parent="." unique_id=1470791223 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical9" parent="." unique_id=1972978905 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical10" parent="." unique_id=1680922522 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical11" parent="." unique_id=1214480086 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical12" parent="." unique_id=1825002411 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical13" parent="." unique_id=813259929 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical14" parent="." unique_id=673374865 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical15" parent="." unique_id=519513485 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical16" parent="." unique_id=5390116 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical17" parent="." unique_id=1790892771 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical18" parent="." unique_id=573619342 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical19" parent="." unique_id=768181346 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical20" parent="." unique_id=223713257 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical21" parent="." unique_id=497161670 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical22" parent="." unique_id=1168397777 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical23" parent="." unique_id=1746328946 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical24" parent="." unique_id=493707398 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical25" parent="." unique_id=1138576917 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical26" parent="." unique_id=817475505 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
+
+[node name="Radical27" parent="." unique_id=1031286292 instance=ExtResource("2_mvg4f")]
+layout_mode = 2
