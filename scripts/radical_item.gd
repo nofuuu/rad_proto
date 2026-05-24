@@ -1,7 +1,7 @@
 extends PanelContainer
 class_name RadicalItem
 
-@onready var label: Label = $Label
+@onready var label: RichTextLabel = $RichTextLabel
 
 # This holds the injected data
 var data: Radical

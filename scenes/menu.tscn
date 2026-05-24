@@ -1,3 +1,46 @@
 [gd_scene format=3 uid="uid://f7gmtnhhyupf"]
 
-[node name="Menu" type="Node2D" unique_id=1947567701]
+[ext_resource type="Script" uid="uid://dmxrdi2slbkc3" path="res://scripts/menu_main.gd" id="1_yqeox"]
+
+[node name="Menu" type="Control" unique_id=1601783706]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqeox")
+
+[node name="Node" type="VBoxContainer" parent="." unique_id=818214273]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -263.0
+offset_top = -160.25
+offset_right = 263.0
+offset_bottom = 160.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Button_Tutorial" type="Button" parent="Node" unique_id=1376892683]
+layout_mode = 2
+size_flags_vertical = 3
+text = "TUTORIAL"
+
+[node name="Button_Levels" type="Button" parent="Node" unique_id=1418510147]
+layout_mode = 2
+size_flags_vertical = 3
+text = "LEVELS"
+
+[node name="Button_Sandbox" type="Button" parent="Node" unique_id=1184418693]
+layout_mode = 2
+size_flags_vertical = 3
+text = "SANDBOX"
+
+[connection signal="pressed" from="Node/Button_Tutorial" to="." method="_on_button_tutorial_pressed"]
+[connection signal="pressed" from="Node/Button_Levels" to="." method="_on_button_levels_pressed"]
+[connection signal="pressed" from="Node/Button_Sandbox" to="." method="_on_button_sandbox_pressed"]

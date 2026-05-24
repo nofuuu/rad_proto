@@ -2,34 +2,33 @@
 
 [ext_resource type="Script" uid="uid://0crmx4ciqvk" path="res://scripts/radical_item.gd" id="1_xbjak"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8k6p7"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbjak"]
+bg_color = Color(0.39308554, 0.39308554, 0.39308533, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+border_color = Color(0.48962224, 0.48962224, 0.48962218, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
 
-[sub_resource type="SystemFont" id="SystemFont_xbjak"]
-
-[sub_resource type="Theme" id="Theme_5v78a"]
-default_font = SubResource("SystemFont_xbjak")
-default_font_size = 24
-
-[node name="Radical" type="PanelContainer" unique_id=1127722633]
-offset_right = 40.0
-offset_bottom = 60.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_8k6p7")
+[node name="Radical" type="PanelContainer" unique_id=512949740]
+custom_minimum_size = Vector2(30, 40)
+offset_right = 30.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_xbjak")
 script = ExtResource("1_xbjak")
 
-[node name="Label" type="Label" parent="." unique_id=39537668]
-custom_minimum_size = Vector2(40, 60)
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=106284539]
 layout_mode = 2
-size_flags_vertical = 1
-theme = SubResource("Theme_5v78a")
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 24
 text = "水"
+scroll_active = false
+autowrap_mode = 1
 horizontal_alignment = 1
 vertical_alignment = 1
-clip_text = true

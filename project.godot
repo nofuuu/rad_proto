@@ -19,6 +19,13 @@ config/icon="res://icon.svg"
 
 Database="*uid://bln0jy35ltx3v"
 
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
