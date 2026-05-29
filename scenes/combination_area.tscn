@@ -1,54 +1,65 @@
 [gd_scene format=3 uid="uid://35r2wq1rlt32"]
 
-[ext_resource type="Script" uid="uid://t8k5lciosfx" path="res://scripts/combination_area.gd" id="1_xopy3"]
+[ext_resource type="Script" uid="uid://ch3jxdo74ypo7" path="res://scripts/combination_area.gd" id="1_08byu"]
+[ext_resource type="PackedScene" uid="uid://10lf1vvdestr" path="res://scenes/area.tscn" id="2_08byu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhrqn"]
-bg_color = Color(0.6, 0.6, 0.6, 0.1882353)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xopy3"]
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
+corner_detail = 6
 
 [node name="CombinationArea" type="Control" unique_id=1215755804]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_xopy3")
+script = ExtResource("1_08byu")
 
-[node name="Left-to-Right" type="Panel" parent="." unique_id=1190500333]
+[node name="Boundary" type="Panel" parent="." unique_id=33249899]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -45.5
-offset_top = -45.5
-offset_right = 45.5
-offset_bottom = 45.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_dhrqn")
+theme_override_styles/panel = SubResource("StyleBoxFlat_xopy3")
 
-[node name="Left" type="PanelContainer" parent="Left-to-Right" unique_id=381599879]
+[node name="Area" parent="." unique_id=40611055 instance=ExtResource("2_08byu")]
+custom_minimum_size = Vector2(296, 296)
 layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_left = 0.5
-offset_top = 1.5
-offset_right = 44.5
-offset_bottom = -1.5
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -148.0
+offset_right = 148.0
+offset_bottom = 148.0
+grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Right" type="PanelContainer" parent="Left-to-Right" unique_id=1319295396]
+[node name="Label" type="Label" parent="." unique_id=1129028410]
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -45.5
-offset_top = 1.5
-offset_right = -1.5
-offset_bottom = -1.5
-grow_horizontal = 0
-grow_vertical = 2
+offset_left = -144.5
+offset_top = 159.0
+offset_right = 144.5
+offset_bottom = 182.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "-"
+horizontal_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

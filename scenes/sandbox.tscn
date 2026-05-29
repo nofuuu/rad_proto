@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bsd6tbqm3y5vc" path="res://scenes/menu_radicals.tscn" id="1_2ddto"]
 [ext_resource type="PackedScene" uid="uid://35r2wq1rlt32" path="res://scenes/combination_area.tscn" id="2_rgld7"]
+[ext_resource type="PackedScene" uid="uid://b1jutcsj1lsql" path="res://scenes/trash.tscn" id="3_a8pr3"]
 
 [node name="Control" type="Control" unique_id=564268541]
 layout_mode = 3
@@ -16,7 +17,14 @@ layout_mode = 1
 
 [node name="CombinationArea" parent="." unique_id=1215755804 instance=ExtResource("2_rgld7")]
 layout_mode = 0
-offset_left = 339.0
-offset_top = 653.0
-offset_right = 339.0
-offset_bottom = 653.0
+offset_left = 348.0
+offset_top = 787.00006
+offset_right = 348.0
+offset_bottom = 787.00006
+
+[node name="Delete" parent="." unique_id=1859022224 instance=ExtResource("3_a8pr3")]
+layout_mode = 1
+offset_left = 590.0
+offset_top = 748.0
+offset_right = -55.0
+offset_bottom = -432.0

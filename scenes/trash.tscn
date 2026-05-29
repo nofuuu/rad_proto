@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b1jutcsj1lsql"]
+
+[ext_resource type="Script" uid="uid://dm2sqrhbfmxft" path="res://scripts/trash.gd" id="1_3xixx"]
+
+[node name="Delete" type="PanelContainer" unique_id=1859022224]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -645.0
+offset_bottom = -1180.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3xixx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1521929801]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 55
+text = "🗑"
+scroll_active = false
+autowrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 1

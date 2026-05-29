@@ -6,18 +6,18 @@ func _ready() -> void:
 	db = SQLite.new()
 	db.path = "res://data/dictionary_combined.db"
 	db.read_only = true
-	if db.open_db():
-		var query = "SELECT * FROM merged WHERE character = '你' LIMIT 1;"
-		db.query(query)
-		print("Query Results: ", db.query_result[0]["pinyin"])
-	else:
+	if not db.open_db():
 		print("Failed to open DB")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
 
 func get_radicals():
 	var query = "SELECT * FROM radicals"
 	db.query(query)
 	return db.query_result
+
+func search_by_ids_structure(search):
+	var query = "SELECT * FROM merged WHERE ids_structure = ?"
+	db.query_with_bindings(query, [search])
+	if db.query_result.size() > 0 :
+		print("Found match: ", db.query_result[0]["character"])
+	else:
+		print("No match")
