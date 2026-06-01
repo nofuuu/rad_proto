@@ -18,6 +18,6 @@ func search_by_ids_structure(search):
 	var query = "SELECT * FROM merged WHERE ids_structure = ?"
 	db.query_with_bindings(query, [search])
 	if db.query_result.size() > 0 :
-		print("Found match: ", db.query_result[0]["character"])
+		return "Found match: " + db.query_result[0]["character"]
 	else:
-		print("No match")
+		return "No match"

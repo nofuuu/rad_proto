@@ -1,0 +1,4 @@
+extends Node
+
+signal composition_changed
+signal reset_combination_area

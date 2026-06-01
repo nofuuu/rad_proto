@@ -1,7 +1,5 @@
 extends PanelContainer
 
-signal composition_changed
-
 @onready var overlay = $Preview
 @onready var label = $RichTextLabel
 @onready var split_root = $Split
@@ -13,6 +11,52 @@ var split_type : String = ""
 
 var parent : Node = null
 
+# ------------------------------------------------------------------------------
+# Reset area
+# ------------------------------------------------------------------------------
+func reset():
+	unset_radical()
+	for x in split_root.get_children():
+		split_root.remove_child(x)
+		x.queue_free()
+	split_type = ""
+	Signals.composition_changed.emit()
+	
+# ------------------------------------------------------------------------------
+# Unsplit area
+# ------------------------------------------------------------------------------
+func unsplit():
+	if parent == null: return
+	var container = parent.split_root.get_child(0)
+	container.remove_child(self)
+	queue_free()
+	var children = container.get_children()
+	# More than 1 child, split type downgrades
+	if children.size() != 1:
+		parent.split_type = downgrade_split(parent.split_type)
+		Signals.composition_changed.emit()
+		return
+	# Only 1 child remains, split collapses
+	var survivor = children[0]
+	parent.set_radical({"radical": survivor.radical})
+	parent.split_type = ""
+	parent.split_root.get_child(0).queue_free()
+	# Reparents possible children
+	if survivor.split_root.get_child_count() > 0:
+		var inner = survivor.split_root.get_child(0)
+		survivor.split_root.remove_child(inner)
+		parent.split_root.add_child(inner)
+		for child in inner.get_children():
+			child.parent = parent
+	survivor.queue_free()
+	# Signal
+	Signals.composition_changed.emit()
+	
+func downgrade_split(split):
+	match split:
+		"⿲": return "⿰"
+		"⿳": return "⿱"
+		_: return ""
 # ------------------------------------------------------------------------------
 # Radical
 # ------------------------------------------------------------------------------
@@ -32,9 +76,11 @@ func unset_radical():
 # ------------------------------------------------------------------------------
 # Parent helper
 # ------------------------------------------------------------------------------
-func parent_can_expand() -> bool:
-	return parent != null and parent.split_type in ["⿰", "⿱"]
-
+func parent_can_expand(zone) -> bool:
+	if parent == null : return false
+	if parent.split_type == "⿰" and zone not in ["top","bottom"]: return true
+	if parent.split_type == "⿱" and zone not in ["left","right"]: return true
+	return false
 # ------------------------------------------------------------------------------
 # Drag & Drop
 # ------------------------------------------------------------------------------
@@ -56,12 +102,12 @@ func _drop_data(pos, data):
 	# ----- CENTER -----
 	if zone == "center":
 		set_radical(data)
-		composition_changed.emit()
+		Signals.composition_changed.emit()
 		return
 	# ----- EXPAND -----
-	if parent_can_expand():
+	if parent_can_expand(zone):
 		expand_split(data, zone)
-		composition_changed.emit()
+		Signals.composition_changed.emit()
 		return
 	# ----- SPLIT -----
 	var old_radical = {"radical":radical}
@@ -80,11 +126,8 @@ func _drop_data(pos, data):
 			split_root.get_child(0).get_child(1).set_radical(data)
 			split_root.get_child(0).get_child(0).set_radical(old_radical)
 	# Send signal
-	composition_changed.emit()
+	Signals.composition_changed.emit()
 	return
-	
-func _on_child_changed():
-	composition_changed.emit()
 
 # ------------------------------------------------------------------------------
 # Split
@@ -109,7 +152,6 @@ func create_split(type : String, count:=2):
 	for i in count:
 		var child = preload("res://scenes/area.tscn").instantiate()
 		child.parent = self
-		child.composition_changed.connect(_on_child_changed)
 		container.add_child(child)
 
 # ------------------------------------------------------------------------------
@@ -126,11 +168,11 @@ func expand_split(data: Dictionary, zone : String):
 	if zone == "left" or zone == "top":
 		insert_index = 0
 	var new_area = preload("res://scenes/area.tscn").instantiate()
-	new_area.composition_changed.connect(_on_child_changed)
 	new_area.parent = parent
 	container.add_child(new_area)
 	container.move_child(new_area, insert_index)
 	new_area.set_radical(data)
+
 # ------------------------------------------------------------------------------
 # Hover zone
 # ------------------------------------------------------------------------------

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://pxr8qivmici1"]
+
+[ext_resource type="Script" uid="uid://bgoqmrk558nga" path="res://scripts/reset.gd" id="1_56cnf"]
+
+[node name="Reset" type="Button" unique_id=1132041218]
+offset_right = 75.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 55
+text = "⟳"
+script = ExtResource("1_56cnf")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
