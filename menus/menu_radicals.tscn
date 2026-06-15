@@ -4,16 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://vw8kanq8gywl" path="res://components/radical/radical.tscn" id="2_twuqd"]
 
 [node name="RadicalMenu" type="GridContainer" unique_id=530804148]
-clip_contents = true
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -355.0
-offset_top = 6.0
-offset_right = 355.0
-offset_bottom = 243.0
+offset_left = -338.0
+offset_top = 16.0
+offset_right = 338.0
+offset_bottom = 509.0
 grow_horizontal = 2
-columns = 21
+theme_override_constants/h_separation = 4
+columns = 20
 script = ExtResource("1_vncgj")
 radical_item_scene = ExtResource("2_twuqd")
 
