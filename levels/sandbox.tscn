@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://1x4c2qja6d5h"]
+
+[ext_resource type="PackedScene" uid="uid://bsd6tbqm3y5vc" path="res://menus/menu_radicals.tscn" id="1_0glgv"]
+[ext_resource type="PackedScene" uid="uid://35r2wq1rlt32" path="res://components/combination/combination_area.tscn" id="2_gck8l"]
+[ext_resource type="PackedScene" uid="uid://b1jutcsj1lsql" path="res://menus/trash.tscn" id="3_llpag"]
+[ext_resource type="PackedScene" uid="uid://pxr8qivmici1" path="res://menus/reset.tscn" id="4_tv6ri"]
+[ext_resource type="PackedScene" uid="uid://btbny5fmj5ffy" path="res://components/combination/variants/area_enclosure.tscn" id="5_jpsdj"]
+
+[node name="Control" type="Control" unique_id=564268541]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RadicalMenu" parent="." unique_id=530804148 instance=ExtResource("1_0glgv")]
+layout_mode = 1
+
+[node name="CombinationArea" parent="." unique_id=1215755804 instance=ExtResource("2_gck8l")]
+layout_mode = 0
+offset_left = 348.0
+offset_top = 787.00006
+offset_right = 348.0
+offset_bottom = 787.00006
+
+[node name="Delete" parent="." unique_id=1859022224 instance=ExtResource("3_llpag")]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 725.0
+offset_right = 588.0
+offset_bottom = 825.0
+
+[node name="Reset" parent="." unique_id=1132041218 instance=ExtResource("4_tv6ri")]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 832.0
+offset_right = 588.0
+offset_bottom = 932.0
+
+[node name="Area_Enclosure" parent="." unique_id=40611055 instance=ExtResource("5_jpsdj")]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 1066.0
+offset_right = 152.0
+offset_bottom = 1166.0

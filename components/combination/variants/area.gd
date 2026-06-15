@@ -1,12 +1,9 @@
-extends PanelContainer
+extends InteractionArea
 
-@onready var overlay = $Preview
-@onready var label = $RichTextLabel
 @onready var split_root = $Split
 
 const EDGE_SIZE = 0.25
 
-var radical : Radical
 var split_type : String = ""
 
 var parent : Node = null
@@ -57,21 +54,6 @@ func downgrade_split(split):
 		"⿲": return "⿰"
 		"⿳": return "⿱"
 		_: return ""
-# ------------------------------------------------------------------------------
-# Radical
-# ------------------------------------------------------------------------------
-func set_radical(data):
-	radical = data.get("radical")
-	if radical:
-		label.visible = true
-		label.text = radical.character
-	else:
-		unset_radical()
-	
-func unset_radical():
-	radical = null
-	label.visible = false
-	label.text = ""
 	
 # ------------------------------------------------------------------------------
 # Parent helper
@@ -82,21 +64,8 @@ func parent_can_expand(zone) -> bool:
 	if parent.split_type == "⿱" and zone not in ["left","right"]: return true
 	return false
 # ------------------------------------------------------------------------------
-# Drag & Drop
+# Drop
 # ------------------------------------------------------------------------------
-func _get_drag_data(_at_position: Vector2) -> Variant:
-	var preview = duplicate()
-	preview.modulate.a = 0.2
-	set_drag_preview(preview)
-	return {
-		"radical":radical,
-		"source":self
-	}
-
-func _can_drop_data(pos, _data):
-	show_hover(get_hover_zone(pos))
-	return true
-
 func _drop_data(pos, data):
 	var zone = get_hover_zone(pos)
 	# ----- CENTER -----
@@ -150,7 +119,7 @@ func create_split(type : String, count:=2):
 	split_root.add_child(container)
 	container.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	for i in count:
-		var child = preload("res://scenes/area.tscn").instantiate()
+		var child = preload("res://components/combination/variants/area.tscn").instantiate()
 		child.parent = self
 		container.add_child(child)
 
@@ -164,10 +133,11 @@ func expand_split(data: Dictionary, zone : String):
 	if parent.split_root.get_child_count() == 0:
 		return
 	var container = parent.split_root.get_child(0)
-	var insert_index = container.get_child_count()
+	var self_index = get_index()
+	var insert_index = self_index + 1
 	if zone == "left" or zone == "top":
-		insert_index = 0
-	var new_area = preload("res://scenes/area.tscn").instantiate()
+		insert_index = self_index
+	var new_area = preload("res://components/combination/variants/area.tscn").instantiate()
 	new_area.parent = parent
 	container.add_child(new_area)
 	container.move_child(new_area, insert_index)
@@ -212,13 +182,6 @@ func show_hover(zone):
 		"bottom":
 			overlay.custom_minimum_size.y = dynamic_height
 			overlay.size_flags_vertical = SIZE_SHRINK_END
-
-func _on_mouse_exited() -> void:
-	overlay.visible = false
-
-func _notification(what: int) -> void:
-	if what == NOTIFICATION_DRAG_END:
-		overlay.visible = false
 
 # ------------------------------------------------------------------------------
 # IDS Serialization

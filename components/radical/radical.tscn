@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://vw8kanq8gywl"]
 
-[ext_resource type="Script" uid="uid://0crmx4ciqvk" path="res://scripts/radical_item.gd" id="1_xbjak"]
+[ext_resource type="Script" uid="uid://0crmx4ciqvk" path="res://components/radical/radical_item.gd" id="1_xbjak"]
+[ext_resource type="PackedScene" uid="uid://db24crqq5wysn" path="res://components/radical/radical_svg.tscn" id="2_mbdra"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbjak"]
 bg_color = Color(0.39308554, 0.39308554, 0.39308533, 1)
@@ -24,6 +25,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_xbjak")
 script = ExtResource("1_xbjak")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=106284539]
+visible = false
 layout_mode = 2
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 24
@@ -32,3 +34,6 @@ scroll_active = false
 autowrap_mode = 1
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Radical" parent="." unique_id=1559671044 instance=ExtResource("2_mbdra")]
+layout_mode = 2

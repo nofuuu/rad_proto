@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bsd6tbqm3y5vc"]
 
-[ext_resource type="Script" uid="uid://cquli3ybdyu2g" path="res://scripts/menu_radicals.gd" id="1_vncgj"]
-[ext_resource type="PackedScene" uid="uid://vw8kanq8gywl" path="res://scenes/radical.tscn" id="2_twuqd"]
+[ext_resource type="Script" uid="uid://cquli3ybdyu2g" path="res://menus/menu_radicals.gd" id="1_vncgj"]
+[ext_resource type="PackedScene" uid="uid://vw8kanq8gywl" path="res://components/radical/radical.tscn" id="2_twuqd"]
 
 [node name="RadicalMenu" type="GridContainer" unique_id=530804148]
 clip_contents = true

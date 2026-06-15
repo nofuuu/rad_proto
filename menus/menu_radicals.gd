@@ -28,6 +28,7 @@ func build_radical(rad) -> Radical:
 	add_variant(radical, rad, 1)
 	add_variant(radical, rad, 2)
 	add_variant(radical, rad, 3)
+	#radical.shape = rad.shape
 	return radical
 	
 func add_variant(radical: Radical, rad, num: int):

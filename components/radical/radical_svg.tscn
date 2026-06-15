@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://db24crqq5wysn"]
+
+[ext_resource type="Script" uid="uid://buxa5e65ehu3g" path="res://components/radical/radical_svg.gd" id="1_dr1ve"]
+
+[node name="Radical" type="Control" unique_id=1559671044]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dr1ve")
+
+[node name="CenterMarker" type="Marker2D" parent="." unique_id=662804051]
+
+[node name="CharacterRoot" type="Node2D" parent="CenterMarker" unique_id=626206292]

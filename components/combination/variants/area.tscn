@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://10lf1vvdestr"]
 
-[ext_resource type="Script" uid="uid://cd1go0i35g66c" path="res://scripts/area.gd" id="1_u55m2"]
+[ext_resource type="Script" uid="uid://cd1go0i35g66c" path="res://components/combination/variants/area.gd" id="1_wpxf7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u55m2"]
 bg_color = Color(0.24457261, 0.64746284, 0.83179575, 0.34901962)
@@ -13,7 +13,7 @@ corner_detail = 6
 [node name="Area" type="PanelContainer" unique_id=40611055]
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_u55m2")
+script = ExtResource("1_wpxf7")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2115632448]
 layout_mode = 2

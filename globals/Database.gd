@@ -9,7 +9,7 @@ func _ready() -> void:
 	if not db.open_db():
 		print("Failed to open DB")
 
-func get_radicals():
+func get_radicals() -> Array[Dictionary]:
 	var query = "SELECT * FROM radicals"
 	db.query(query)
 	return db.query_result

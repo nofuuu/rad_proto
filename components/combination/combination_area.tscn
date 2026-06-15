@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://35r2wq1rlt32"]
 
-[ext_resource type="Script" uid="uid://ch3jxdo74ypo7" path="res://scripts/combination_area.gd" id="1_08byu"]
-[ext_resource type="PackedScene" uid="uid://10lf1vvdestr" path="res://scenes/area.tscn" id="2_08byu"]
+[ext_resource type="Script" uid="uid://ch3jxdo74ypo7" path="res://components/combination/combination_area.gd" id="1_08byu"]
+[ext_resource type="PackedScene" uid="uid://10lf1vvdestr" path="res://components/combination/variants/area.tscn" id="2_08byu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xopy3"]
 corner_radius_top_left = 4
