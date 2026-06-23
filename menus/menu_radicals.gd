@@ -29,6 +29,8 @@ func build_radical(rad) -> Radical:
 	add_variant(radical, rad, 2)
 	add_variant(radical, rad, 3)
 	#radical.shape = rad.shape
+	radical.svg_strokes = JSON.parse_string(rad.svg_strokes)
+	radical.svg_medians = JSON.parse_string(rad.svg_medians)
 	return radical
 	
 func add_variant(radical: Radical, rad, num: int):

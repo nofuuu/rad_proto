@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_85u52")
 
-[node name="Node" type="VBoxContainer" parent="." unique_id=818214273]
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=818214273]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -26,21 +26,96 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="Button_Tutorial" type="Button" parent="Node" unique_id=1376892683]
+[node name="Button_Tutorial" type="Button" parent="Buttons" unique_id=1376892683]
 layout_mode = 2
 size_flags_vertical = 3
 text = "TUTORIAL"
 
-[node name="Button_Levels" type="Button" parent="Node" unique_id=1418510147]
+[node name="Button_Levels" type="Button" parent="Buttons" unique_id=1418510147]
 layout_mode = 2
 size_flags_vertical = 3
 text = "LEVELS"
 
-[node name="Button_Sandbox" type="Button" parent="Node" unique_id=1184418693]
+[node name="Button_Sandbox" type="Button" parent="Buttons" unique_id=1184418693]
 layout_mode = 2
 size_flags_vertical = 3
 text = "SANDBOX"
 
-[connection signal="pressed" from="Node/Button_Tutorial" to="." method="_on_button_tutorial_pressed"]
-[connection signal="pressed" from="Node/Button_Levels" to="." method="_on_button_levels_pressed"]
-[connection signal="pressed" from="Node/Button_Sandbox" to="." method="_on_button_sandbox_pressed"]
+[node name="Title" type="HBoxContainer" parent="." unique_id=1222521321]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -255.5
+offset_right = 186.0
+offset_bottom = -210.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Title" unique_id=1816812024]
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "Learn"
+
+[node name="Control" type="Control" parent="Title" unique_id=1977501248]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="1" type="Label" parent="Title/Control" unique_id=1415708222]
+layout_mode = 1
+offset_left = -6.0
+offset_right = 26.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 32
+text = "氵"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="2" type="Label" parent="Title/Control" unique_id=664459900]
+layout_mode = 1
+offset_left = 9.0
+offset_right = 49.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 32
+text = "又 "
+vertical_alignment = 1
+
+[node name="3" type="Label" parent="Title/Control" unique_id=690681548]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.0
+offset_top = -8.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "宀"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="4" type="Label" parent="Title/Control" unique_id=1066394035]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -29.0
+offset_top = 8.0
+offset_right = -3.0
+offset_bottom = 44.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 26
+text = "子"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Title" unique_id=570718468]
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "with radicals"
+
+[connection signal="pressed" from="Buttons/Button_Tutorial" to="." method="_on_button_tutorial_pressed"]
+[connection signal="pressed" from="Buttons/Button_Levels" to="." method="_on_button_levels_pressed"]
+[connection signal="pressed" from="Buttons/Button_Sandbox" to="." method="_on_button_sandbox_pressed"]

@@ -1,7 +1,7 @@
 extends PanelContainer
 class_name RadicalItem
 
-@onready var label: RichTextLabel = $RichTextLabel
+@onready var radical: RadicalSVG = $Radical
 
 # This holds the injected data
 var data: Radical
@@ -14,7 +14,9 @@ func setup(radical_data: Radical) -> void:
 	# Wait for the node to be ready in the tree before setting UI elements
 	if not is_node_ready():
 		await ready
-	label.text = data.character
+	radical.setup(data.svg_strokes)
+	#label.text = data.character
+	
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	var preview = duplicate()

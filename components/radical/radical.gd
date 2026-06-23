@@ -7,3 +7,5 @@ class_name Radical
 @export var pinyin: String = ""         # "shuǐ"
 @export var variants: Array = []        #[{"var":"氵", "pos":"left"}, {"var":"氺", "pos":"bottom"}]
 @export var shape: String = ""          # ""
+@export var svg_strokes: Array = []
+@export var svg_medians: Array = []
