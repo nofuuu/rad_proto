@@ -17,7 +17,7 @@ corner_radius_bottom_left = 4
 corner_detail = 6
 
 [node name="Radical" type="PanelContainer" unique_id=512949740]
-custom_minimum_size = Vector2(30, 40)
+custom_minimum_size = Vector2(60, 80)
 offset_right = 68.0
 offset_bottom = 88.0
 size_flags_horizontal = 4

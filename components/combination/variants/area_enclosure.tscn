@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dxb0wdihil2kv" path="res://components/combination/variants/area_enclosure.gd" id="1_0c7l1"]
 [ext_resource type="PackedScene" uid="uid://10lf1vvdestr" path="res://components/combination/variants/area.tscn" id="2_h3rkw"]
+[ext_resource type="PackedScene" uid="uid://db24crqq5wysn" path="res://components/radical/radical_svg.tscn" id="3_tnwjt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u55m2"]
 bg_color = Color(0.24457261, 0.64746284, 0.83179575, 0.34901962)
@@ -14,16 +15,6 @@ corner_detail = 6
 [node name="Area_Enclosure" type="PanelContainer" unique_id=40611055]
 custom_minimum_size = Vector2(100, 100)
 script = ExtResource("1_0c7l1")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2115632448]
-layout_mode = 2
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 80
-text = "囗"
-scroll_active = false
-autowrap_mode = 1
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Preview" type="Panel" parent="." unique_id=1769038530]
 visible = false
@@ -41,5 +32,8 @@ custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="Radical" parent="." unique_id=1677251188 instance=ExtResource("3_tnwjt")]
+layout_mode = 2
 
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://buxa5e65ehu3g" path="res://components/radical/radical_svg.gd" id="1_dr1ve"]
 
 [node name="Radical" type="TextureRect" unique_id=1677251188]
-custom_minimum_size = Vector2(30, 40)
+texture_filter = 4
+custom_minimum_size = Vector2(3, 4)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -14,5 +15,4 @@ size_flags_vertical = 3
 mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
-flip_v = true
 script = ExtResource("1_dr1ve")

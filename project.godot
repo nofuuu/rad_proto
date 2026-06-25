@@ -42,6 +42,10 @@ folder_colors={
 "res://menus/": "purple"
 }
 
+[gui]
+
+theme/custom="uid://mcv1vi4lpy6n"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

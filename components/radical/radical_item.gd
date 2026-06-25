@@ -34,7 +34,7 @@ func _on_mouse_entered() -> void:
 		
 	size_tween = create_tween()
 	# Tweens the scale property to 1.1x over 0.15 seconds using a smooth transition
-	size_tween.tween_property(self, "scale", Vector2(1.2, 1.2), 0.15)\
+	size_tween.tween_property(self, "scale", Vector2(1.15, 1.15), 0.15)\
 		.set_trans(Tween.TRANS_QUAD)\
 		.set_ease(Tween.EASE_OUT)
 

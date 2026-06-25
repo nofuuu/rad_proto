@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://10lf1vvdestr"]
 
 [ext_resource type="Script" uid="uid://cd1go0i35g66c" path="res://components/combination/variants/area.gd" id="1_wpxf7"]
+[ext_resource type="PackedScene" uid="uid://db24crqq5wysn" path="res://components/radical/radical_svg.tscn" id="2_5p6k8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u55m2"]
 bg_color = Color(0.24457261, 0.64746284, 0.83179575, 0.34901962)
@@ -15,15 +16,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_wpxf7")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2115632448]
-layout_mode = 2
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 24
-scroll_active = false
-autowrap_mode = 1
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Preview" type="Panel" parent="." unique_id=1769038530]
 visible = false
 custom_minimum_size = Vector2(20, 20)
@@ -34,5 +26,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_u55m2")
 [node name="Split" type="Control" parent="." unique_id=1494247356]
 layout_mode = 2
 mouse_filter = 1
+
+[node name="Radical" parent="." unique_id=1677251188 instance=ExtResource("2_5p6k8")]
+layout_mode = 2
 
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

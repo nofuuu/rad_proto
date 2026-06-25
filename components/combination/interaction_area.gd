@@ -2,7 +2,8 @@ extends PanelContainer
 class_name InteractionArea
 
 @onready var overlay = $Preview
-@onready var label = $RichTextLabel
+
+@onready var radical_svg: RadicalSVG = $Radical
 
 var radical : Radical
 
@@ -12,15 +13,14 @@ var radical : Radical
 func set_radical(data):
 	radical = data.get("radical")
 	if radical:
-		label.visible = true
-		label.text = radical.character
+		radical_svg.visible = true
+		radical_svg.setup(radical.svg_strokes)
 	else:
 		unset_radical()
 	
 func unset_radical():
 	radical = null
-	label.visible = false
-	label.text = ""
+	radical_svg.visible = false
 	
 # ------------------------------------------------------------------------------
 # Hover
