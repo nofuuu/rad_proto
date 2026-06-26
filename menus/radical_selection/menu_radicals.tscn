@@ -15,10 +15,10 @@ script = ExtResource("1_wvwfc")
 [node name="Mode" type="Button" parent="." unique_id=381205243]
 custom_minimum_size = Vector2(124, 64)
 layout_mode = 0
-offset_left = -356.0
+offset_left = -337.0
 offset_top = 4.0
-offset_right = -265.0
-offset_bottom = 35.0
+offset_right = -213.0
+offset_bottom = 68.0
 text = "CATEGORY▼"
 
 [node name="MenuContainer" type="Control" parent="." unique_id=945903154]

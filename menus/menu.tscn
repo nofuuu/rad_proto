@@ -41,6 +41,11 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "SANDBOX"
 
+[node name="Button_Credits" type="Button" parent="Buttons" unique_id=668846588]
+layout_mode = 2
+size_flags_vertical = 3
+text = "CREDITS"
+
 [node name="Title" type="HBoxContainer" parent="." unique_id=1222521321]
 layout_mode = 1
 anchors_preset = 8
@@ -119,3 +124,4 @@ text = "with radicals"
 [connection signal="pressed" from="Buttons/Button_Tutorial" to="." method="_on_button_tutorial_pressed"]
 [connection signal="pressed" from="Buttons/Button_Levels" to="." method="_on_button_levels_pressed"]
 [connection signal="pressed" from="Buttons/Button_Sandbox" to="." method="_on_button_sandbox_pressed"]
+[connection signal="pressed" from="Buttons/Button_Credits" to="." method="_on_button_credits_pressed"]

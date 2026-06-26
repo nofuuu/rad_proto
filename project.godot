@@ -35,11 +35,13 @@ enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
 
 folder_colors={
 "res://addons/": "gray",
+"res://audio/": "orange",
 "res://components/": "teal",
 "res://data/": "gray",
 "res://globals/": "red",
 "res://levels/": "blue",
-"res://menus/": "purple"
+"res://menus/": "purple",
+"res://themes/": "pink"
 }
 
 [gui]

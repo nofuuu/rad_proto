@@ -1,13 +1,12 @@
-extends RadicalBuilder
+extends RadicalMenu
 
-@export var radical_item_scene: PackedScene
 @onready var tab_container: TabContainer = $TabContainer
 @onready var grid_14_up : GridContainer = $"TabContainer/12+"
 
 func _ready() -> void:
-	tab_container.set_tab_title(0, " 1 ")
 	rename_tabs()
 	populate_inventory()
+	Signals.radical_selected.connect(_on_radical_selected)
 	
 func rename_tabs() -> void:
 	for i in range(11):
@@ -45,3 +44,4 @@ func populate_inventory() -> void:
 			if grid_container:
 				grid_container.add_child(item)
 				item.setup(radical)
+	_refresh_highlights()

@@ -1,10 +1,10 @@
-extends RadicalBuilder
+extends RadicalMenu
 
-@export var radical_item_scene: PackedScene
 @onready var grid_container: GridContainer = $ScrollContainer/GridContainer
 
 func _ready() -> void:
 	populate_inventory()
+	Signals.radical_selected.connect(_on_radical_selected)
 
 func populate_inventory() -> void:
 	#Clear placeholders
@@ -17,3 +17,4 @@ func populate_inventory() -> void:
 		var item = radical_item_scene.instantiate()
 		grid_container.add_child(item)
 		item.setup(radical)
+	_refresh_highlights()

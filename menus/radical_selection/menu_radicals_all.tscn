@@ -32,10 +32,9 @@ offset_right = 350.0
 offset_bottom = 509.0
 grow_horizontal = 2
 script = ExtResource("1_86krj")
-radical_item_scene = ExtResource("2_twuqd")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1294368897]
-custom_minimum_size = Vector2(0, 352)
+custom_minimum_size = Vector2(0, 351)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -49,6 +48,7 @@ theme_override_constants/scrollbar_h_separation = 4
 theme_override_constants/scrollbar_v_separation = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_tkfox")
 horizontal_scroll_mode = 0
+scroll_hint_mode = 1
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=415326714]
 layout_mode = 2

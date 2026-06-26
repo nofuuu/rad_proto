@@ -9,7 +9,7 @@ extends Control
 @onready var lend: Label = $Title/Label2
 
 @export var slide_offset: float = 300.0
-@export var duration: float = 1.0
+@export var duration: float = 0.8
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,7 +23,9 @@ func _on_button_levels_pressed() -> void:
 
 func _on_button_sandbox_pressed() -> void:
 	get_tree().change_scene_to_file("res://levels/sandbox.tscn")
-
+	
+func _on_button_credits_pressed() -> void:
+	get_tree().change_scene_to_file("res://menus/credits.tscn")
 
 func show_labels_sequentially() -> void:
 	var tween: Tween = create_tween()
