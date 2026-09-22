@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://1lmvol7gipxc"]
+
+[ext_resource type="Script" uid="uid://c8gvejx6jbhbq" path="res://audio/volume.gd" id="1_gf4t3"]
+
+[node name="Volume" type="Control" unique_id=1652282969]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 98.0
+offset_bottom = 16.0
+script = ExtResource("1_gf4t3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1390614835]
+layout_mode = 0
+offset_right = 109.0
+offset_bottom = 43.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=347250075]
+layout_mode = 2
+text = "VOLUME"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer" unique_id=1364144460]
+layout_mode = 2
+min_value = -40.0
+max_value = 0.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 3
+
+[connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]

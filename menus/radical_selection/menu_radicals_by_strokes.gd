@@ -29,7 +29,6 @@ func populate_inventory() -> void:
 		var stroke_count: int = r.strokes
 		if stroke_count > 11 :
 			if not stroke_count == label_helper:
-				print(str(label_helper) + "  " + str(stroke_count))
 				label_helper = stroke_count
 				var label = Label.new()
 				label.text = (str(stroke_count) + ":")

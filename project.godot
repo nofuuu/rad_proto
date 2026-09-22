@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Rad Proto"
+config/name="Rad Proto (4.6)"
 run/main_scene="uid://f7gmtnhhyupf"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Database="*uid://bln0jy35ltx3v"
 Signals="*uid://xtmj22r2m3ib"
+PinyinAudio="*uid://cwux4k7eekfr4"
 
 [display]
 
@@ -34,6 +35,7 @@ enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://LICENSES/": "red",
 "res://addons/": "gray",
 "res://audio/": "orange",
 "res://components/": "teal",

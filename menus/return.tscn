@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dcy4u6d2i8hy"]
+
+[ext_resource type="Script" uid="uid://du6nvi1cor0y6" path="res://menus/return.gd" id="1_tyuuh"]
+
+[node name="Return" type="Button" unique_id=1019297193]
+custom_minimum_size = Vector2(128, 64)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -596.0
+offset_bottom = -1216.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "RETURN"
+script = ExtResource("1_tyuuh")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

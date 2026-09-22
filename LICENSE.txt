@@ -1,0 +1,39 @@
+======================================================================
+GAME LICENSE & THIRD-PARTY NOTICES
+======================================================================
+
+GAME SOURCE CODE, SCENES, & ORIGINAL ARTWORK
+----------------------------------------------------------------------
+todo
+
+======================================================================
+THIRD-PARTY DATA & ASSETS
+======================================================================
+The database structures and audio assets integrated within this project 
+are synthesized and derived from open-source projects and retain their original upstream 
+unmodified licenses located in the LICENSES/ folder:
+
+Audio & Voice Assets
+--------------------
+This game uses audio assets from the "audio-cmn" project by Hugo Lopez (PLIDAM, INALCO).
+
+* Asset: Chinese Syllables Audio Dataset (1,707 items, 64k compression)
+* Voice Artist: Chen Wang
+* Source: https://github.com/hugolpz/audio-cmn
+* License: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+* File: LICENSES/cc-by-sa-4.0.txt
+
+Database
+--------------------
+The underlying game database was partially derived and synthesized using data from the following open-source projects:
+
+* Project: Make Me a Hanzi
+* Source: https://github.com/skishore/makemeahanzi
+* License: Arphic Public License (stroke data) & GNU Lesser General Public License version 3 (dictionary data)
+* File 1: LICENSES/ARPHICPL.TXT
+* File 2: LICENSES/LGPL
+
+* Project: CHISE / IDS (Ideographic Description Sequences)
+* Source: https://github.com/chise/ids
+* License: GNU General Public License (GPL) version 2
+* File: LICENSES/gpl-2.0.txt

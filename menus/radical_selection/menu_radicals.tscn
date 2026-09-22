@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cnq35b01luaer"]
 
 [ext_resource type="Script" uid="uid://b4d5spy5ymnbl" path="res://menus/radical_selection/menu_radicals.gd" id="1_wvwfc"]
+[ext_resource type="PackedScene" uid="uid://1lmvol7gipxc" path="res://audio/volume.tscn" id="2_cf2br"]
 [ext_resource type="PackedScene" uid="uid://bsd6tbqm3y5vc" path="res://menus/radical_selection/menu_radicals_all.tscn" id="2_xs3wq"]
 [ext_resource type="PackedScene" uid="uid://c3fdkaoc3yoxb" path="res://menus/radical_selection/menu_radicals_by_strokes.tscn" id="3_cf2br"]
+[ext_resource type="PackedScene" uid="uid://ci0fyhe7mg3db" path="res://components/radical/radical_info.tscn" id="5_edcw7"]
 
 [node name="MenuRadicals" type="Control" unique_id=1375731284]
 layout_mode = 3
@@ -13,7 +15,7 @@ grow_horizontal = 2
 script = ExtResource("1_wvwfc")
 
 [node name="Mode" type="Button" parent="." unique_id=381205243]
-custom_minimum_size = Vector2(124, 64)
+custom_minimum_size = Vector2(128, 64)
 layout_mode = 0
 offset_left = -337.0
 offset_top = 4.0
@@ -43,5 +45,21 @@ offset_bottom = 572.0
 layout_mode = 1
 offset_top = 0.0
 offset_bottom = 0.0
+
+[node name="Volume" parent="." unique_id=869730850 instance=ExtResource("2_cf2br")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_right = 49.0
+grow_horizontal = 2
+
+[node name="RadicalInfo" parent="." unique_id=1655005382 instance=ExtResource("5_edcw7")]
+layout_mode = 1
+offset_left = -341.0
+offset_top = 465.0
+offset_right = -341.0
+offset_bottom = 465.0
 
 [connection signal="pressed" from="Mode" to="." method="_on_mode_pressed"]

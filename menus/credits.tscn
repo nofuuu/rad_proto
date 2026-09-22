@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://blmrq82wlims2"]
 
 [ext_resource type="Script" uid="uid://8lu1ajte43fi" path="res://menus/credits.gd" id="1_xlg2h"]
+[ext_resource type="PackedScene" uid="uid://dcy4u6d2i8hy" path="res://menus/return.tscn" id="2_jkw7x"]
 
 [node name="Credits" type="Control" unique_id=2066084845]
 layout_mode = 3
@@ -10,21 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xlg2h")
-
-[node name="Button" type="Button" parent="." unique_id=1838375625]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -263.0
-offset_top = -35.5
-offset_right = 263.0
-offset_bottom = 35.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "MENU"
 
 [node name="Audio" type="Control" parent="." unique_id=268279402]
 layout_mode = 1
@@ -64,8 +50,31 @@ This game uses audio assets from the \"audio-cmn\" project by Hugo Lopez (PLIDAM
 * Source: [url=https://github.com/hugolpz/audio-cmn]https://github.com/hugolpz/audio-cmn[/url]
 * License: [url=https://creativecommons.org/licenses/by-sa/4.0/]Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)[/url]
 
-[i]Note: The audio files are distributed under the CC BY-SA 4.0 license. The inclusion of these assets does not extend the CC BY-SA license to the game's underlying source code, engine, or unrelated database structures, which remain under their own respective licenses.[/i]"
+[font_size=18]Database[/font_size]
+The underlying game database was partially derived and synthesized using data from the following open-source projects:
+
+* Project: Make Me a Hanzi
+* Source: [url=https://github.com/skishore/makemeahanzi]https://github.com/skishore/makemeahanzi[/url]
+* License: Arphic Public License (stroke data) & GNU Lesser General Public License version 3 (dictionary data)
+
+* Project: CHISE / IDS (Ideographic Description Sequences)
+* Source: [url=https://github.com/chise/ids]https://github.com/chise/ids[/url]
+* License: GNU General Public License (GPL) version 2
+
+[i]Note: The audio files and source database structures are distributed under their respective open-source licenses. The inclusion of these data points and assets does not extend their licenses (such as CC BY-SA or GPL) to the game's underlying custom source code, engine mechanics, or unrelated proprietary files, which remain under their own respective licenses.[/i]
+"
 fit_content = true
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Return" parent="." unique_id=1019297193 instance=ExtResource("2_jkw7x")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 93.0
+offset_right = 64.0
+offset_bottom = 157.0
+
 [connection signal="meta_clicked" from="Audio/Pinyin" to="." method="_on_pinyin_meta_clicked"]

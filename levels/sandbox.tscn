@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://pxr8qivmici1" path="res://menus/reset.tscn" id="4_tv6ri"]
 [ext_resource type="PackedScene" uid="uid://cnq35b01luaer" path="res://menus/radical_selection/menu_radicals.tscn" id="5_0glgv"]
 [ext_resource type="PackedScene" uid="uid://btbny5fmj5ffy" path="res://components/combination/variants/area_enclosure.tscn" id="5_jpsdj"]
+[ext_resource type="PackedScene" uid="uid://dcy4u6d2i8hy" path="res://menus/return.tscn" id="6_gck8l"]
 
 [node name="Control" type="Control" unique_id=564268541]
 layout_mode = 3
@@ -19,8 +20,8 @@ layout_mode = 1
 
 [node name="CombinationArea" parent="." unique_id=1215755804 instance=ExtResource("2_gck8l")]
 layout_mode = 1
-offset_top = 96.0
-offset_bottom = 96.0
+offset_top = 158.0
+offset_bottom = 158.0
 
 [node name="Delete" parent="CombinationArea" unique_id=1859022224 instance=ExtResource("3_llpag")]
 layout_mode = 0
@@ -42,3 +43,15 @@ offset_left = 52.0
 offset_top = 1066.0
 offset_right = 152.0
 offset_bottom = 1166.0
+
+[node name="Return" parent="." unique_id=1019297193 instance=ExtResource("6_gck8l")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_bottom = 0.0
+offset_left = -136.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 72.0
+grow_horizontal = 0
+grow_vertical = 1
