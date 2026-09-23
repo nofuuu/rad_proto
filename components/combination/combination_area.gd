@@ -1,6 +1,6 @@
 extends Control
-@onready var idsstring = $IDS_String
-@onready var matchstring = $Match
+@onready var idsstring = $Boundary/IDS_String
+@onready var matchstring = $Boundary/Match
 @onready var area = $Area
 
 # Called when the node enters the scene tree for the first time.

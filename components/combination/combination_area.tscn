@@ -37,6 +37,39 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xopy3")
 
+[node name="IDS_String" type="Label" parent="Boundary" unique_id=1129028410]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.5
+offset_top = 8.0
+offset_right = 144.5
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+
+[node name="Match" type="Label" parent="Boundary" unique_id=1990634980]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.5
+offset_top = 59.0
+offset_right = 144.5
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "No match"
+horizontal_alignment = 1
+
 [node name="Area" parent="." unique_id=40611055 instance=ExtResource("2_08byu")]
 custom_minimum_size = Vector2(396, 396)
 layout_mode = 1
@@ -51,38 +84,5 @@ offset_right = 148.0
 offset_bottom = 148.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="IDS_String" type="Label" parent="." unique_id=1129028410]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -144.5
-offset_top = 208.0
-offset_right = 144.5
-offset_bottom = 243.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 25
-horizontal_alignment = 1
-
-[node name="Match" type="Label" parent="." unique_id=1990634980]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -144.5
-offset_top = 259.0
-offset_right = 144.5
-offset_bottom = 294.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 25
-text = "No match"
-horizontal_alignment = 1
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

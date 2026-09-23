@@ -15,8 +15,14 @@ func get_radicals() -> Array[Dictionary]:
 	return db.query_result
 	
 func get_radical(radical):
-	var query = "SELECT * FROM radicals WHERE character = ?"
-	db.query_with_bindings(query, [radical])
+	var query = """
+	SELECT * FROM radicals
+	WHERE character = ?
+		OR variant_1 = ?
+		OR variant_2 = ?
+		OR variant_3 = ?
+	"""
+	db.query_with_bindings(query, [radical, radical, radical, radical])
 	if db.query_result.size() > 0 :
 		return db.query_result[0]
 	else:

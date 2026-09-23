@@ -43,6 +43,5 @@ func play_pinyin(pinyin: String) -> void :
 		var stream = load(file_path)
 		audio_player.stream = stream
 		audio_player.play()
-		print("Playing pinyin audio: ", pinyin)
 	else:
 		push_error("Pinyin audio file not found at: " + file_path)

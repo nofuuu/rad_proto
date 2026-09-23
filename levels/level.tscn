@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://biq5lunpi21fa"]
+
+[ext_resource type="PackedScene" uid="uid://35r2wq1rlt32" path="res://components/combination/combination_area.tscn" id="1_cwqvt"]
+[ext_resource type="PackedScene" uid="uid://o3l0bgoao65u" path="res://levels/preview_area.tscn" id="2_hjsbj"]
+
+[node name="Level" type="Control" unique_id=1200600860]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CombinationArea" parent="." unique_id=1215755804 instance=ExtResource("1_cwqvt")]
+layout_mode = 1
+
+[node name="PreviewArea" parent="." unique_id=1453152587 instance=ExtResource("2_hjsbj")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 66.0
+offset_right = 64.0
+offset_bottom = 194.0
+grow_horizontal = 2

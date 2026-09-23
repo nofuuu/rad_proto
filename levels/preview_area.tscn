@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://o3l0bgoao65u"]
+
+[ext_resource type="Script" uid="uid://cd1go0i35g66c" path="res://components/combination/variants/area.gd" id="1_m3bwn"]
+[ext_resource type="PackedScene" uid="uid://db24crqq5wysn" path="res://components/radical/radical_svg.tscn" id="2_f1cce"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xopy3"]
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u55m2"]
+bg_color = Color(0.24457261, 0.64746284, 0.83179575, 0.34901962)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 6
+
+[node name="PreviewArea" type="Control" unique_id=1453152587]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+
+[node name="Boundary" type="Panel" parent="." unique_id=2005463010]
+custom_minimum_size = Vector2(132, 132)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -66.0
+offset_right = 66.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xopy3")
+
+[node name="Area" type="PanelContainer" parent="." unique_id=414415038]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_m3bwn")
+
+[node name="Preview" type="Panel" parent="Area" unique_id=258903329]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u55m2")
+
+[node name="Split" type="Control" parent="Area" unique_id=100493739]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Radical" parent="Area" unique_id=1677251188 instance=ExtResource("2_f1cce")]
+layout_mode = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_exited" from="Area" to="Area" method="_on_mouse_exited"]

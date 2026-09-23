@@ -119,7 +119,7 @@ func create_split(type : String, count:=2):
 	split_root.add_child(container)
 	container.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	for i in count:
-		var child = preload("res://components/combination/variants/area.tscn").instantiate()
+		var child = load("res://components/combination/variants/area.tscn").instantiate()
 		child.parent = self
 		container.add_child(child)
 
@@ -137,7 +137,7 @@ func expand_split(data: Dictionary, zone : String):
 	var insert_index = self_index + 1
 	if zone == "left" or zone == "top":
 		insert_index = self_index
-	var new_area = preload("res://components/combination/variants/area.tscn").instantiate()
+	var new_area = load("res://components/combination/variants/area.tscn").instantiate()
 	new_area.parent = parent
 	container.add_child(new_area)
 	container.move_child(new_area, insert_index)
