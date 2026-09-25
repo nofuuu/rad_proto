@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Database="*uid://bln0jy35ltx3v"
 Signals="*uid://xtmj22r2m3ib"
 PinyinAudio="*uid://cwux4k7eekfr4"
+LevelManager="*uid://dv815lbvuqiof"
 
 [display]
 

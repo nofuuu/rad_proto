@@ -29,6 +29,7 @@ theme_override_constants/separation = 12
 [node name="Button_Tutorial" type="Button" parent="Buttons" unique_id=1376892683]
 layout_mode = 2
 size_flags_vertical = 3
+disabled = true
 text = "TUTORIAL"
 
 [node name="Button_Levels" type="Button" parent="Buttons" unique_id=1418510147]

@@ -23,7 +23,7 @@ offset_top = 57.0
 offset_right = 198.0
 offset_bottom = 272.0
 grow_horizontal = 2
-text = "你好 你 好世 界"
+text = "你好 你 好世 界丝"
 placeholder_text = "insert chinese characters"
 
 [node name="Button" type="Button" parent="TextEdit" unique_id=1858234655]
@@ -51,6 +51,18 @@ size_flags_horizontal = 3
 text = "Preview - Unique Characters: 0"
 horizontal_alignment = 1
 
+[node name="Background" type="Panel" parent="Label" unique_id=1264397045]
+modulate = Color(1, 1, 1, 0.41568628)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -280.0
+offset_top = 45.0
+offset_right = 280.0
+offset_bottom = 495.0
+grow_horizontal = 2
+
 [node name="Preview" type="GridContainer" parent="Label" unique_id=953236433]
 layout_mode = 1
 anchors_preset = 5
@@ -77,4 +89,63 @@ offset_bottom = 74.0
 grow_horizontal = 0
 grow_vertical = 1
 
+[node name="GameOptions" type="Label" parent="." unique_id=1457252189]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 925.0
+offset_right = 55.5
+offset_bottom = 948.0
+grow_horizontal = 2
+text = "Game Options"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameOptions" unique_id=1754000569]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 44.0
+offset_right = 200.0
+offset_bottom = 108.0
+grow_horizontal = 2
+
+[node name="Button" type="Button" parent="GameOptions/HBoxContainer" unique_id=495903466]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "temp"
+
+[node name="Button2" type="Button" parent="GameOptions/HBoxContainer" unique_id=882701826]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "temp"
+
+[node name="Button3" type="Button" parent="GameOptions/HBoxContainer" unique_id=723643074]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "temp"
+
+[node name="Button4" type="Button" parent="GameOptions/HBoxContainer" unique_id=1466911099]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "temp"
+
+[node name="StartGame" type="Button" parent="." unique_id=1840605609]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -90.0
+offset_right = 64.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "START GAME"
+
 [connection signal="pressed" from="TextEdit/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]

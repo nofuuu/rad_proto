@@ -8,6 +8,14 @@ func _ready() -> void:
 	db.read_only = true
 	if not db.open_db():
 		print("Failed to open DB")
+		
+func get_character_data(character):
+	var query = "SELECT * FROM merged WHERE character = ?"
+	db.query_with_bindings(query, [character])
+	if db.query_result.size() > 0 :
+		return db.query_result[0]
+	else:
+		return {}
 
 func get_radicals() -> Array[Dictionary]:
 	var query = "SELECT * FROM radicals"
