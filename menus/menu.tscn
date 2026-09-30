@@ -26,12 +26,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="Button_Tutorial" type="Button" parent="Buttons" unique_id=1376892683]
-layout_mode = 2
-size_flags_vertical = 3
-disabled = true
-text = "TUTORIAL"
-
 [node name="Button_Levels" type="Button" parent="Buttons" unique_id=1418510147]
 layout_mode = 2
 size_flags_vertical = 3
@@ -122,7 +116,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 31
 text = "with radicals"
 
-[connection signal="pressed" from="Buttons/Button_Tutorial" to="." method="_on_button_tutorial_pressed"]
 [connection signal="pressed" from="Buttons/Button_Levels" to="." method="_on_button_levels_pressed"]
 [connection signal="pressed" from="Buttons/Button_Sandbox" to="." method="_on_button_sandbox_pressed"]
 [connection signal="pressed" from="Buttons/Button_Credits" to="." method="_on_button_credits_pressed"]

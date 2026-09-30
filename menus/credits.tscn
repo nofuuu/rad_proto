@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://blmrq82wlims2"]
 
 [ext_resource type="Script" uid="uid://8lu1ajte43fi" path="res://menus/credits.gd" id="1_xlg2h"]
-[ext_resource type="PackedScene" uid="uid://dcy4u6d2i8hy" path="res://menus/return.tscn" id="2_jkw7x"]
+[ext_resource type="PackedScene" uid="uid://0y0khtapu7qw" path="res://menus/topmenu.tscn" id="2_jkw7x"]
 
 [node name="Credits" type="Control" unique_id=2066084845]
 layout_mode = 3
@@ -12,21 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xlg2h")
 
-[node name="Audio" type="Control" parent="." unique_id=268279402]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -297.0
-offset_right = 20.0
-offset_bottom = -257.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Pinyin" type="RichTextLabel" parent="Audio" unique_id=313547767]
+[node name="Text" type="RichTextLabel" parent="." unique_id=313547767]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -34,21 +20,27 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -325.0
-offset_top = -225.5
+offset_top = -412.5
 offset_right = 325.0
-offset_bottom = 225.5
+offset_bottom = 412.5
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
 text = "[center][font_size=24]THIRD-PARTY CREDITS[/font_size][/center]
 
-[font_size=18]Audio & Voice Assets[/font_size]
+[font_size=18] Voice Assets[/font_size]
 This game uses audio assets from the \"audio-cmn\" project by Hugo Lopez (PLIDAM, INALCO).
 
 * Asset: Chinese Syllables Audio Dataset (1,707 items, 64k compression)
 * Voice Artist: Chen Wang
 * Source: [url=https://github.com/hugolpz/audio-cmn]https://github.com/hugolpz/audio-cmn[/url]
 * License: [url=https://creativecommons.org/licenses/by-sa/4.0/]Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)[/url]
+
+[font_size=18] Music [/font_size]
+The background music is \"Ripples\" by Kevin MacLeod
+\"Ripples\" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
 
 [font_size=18]Database[/font_size]
 The underlying game database was partially derived and synthesized using data from the following open-source projects:
@@ -65,16 +57,13 @@ The underlying game database was partially derived and synthesized using data fr
 "
 fit_content = true
 
-[node name="Return" parent="." unique_id=1019297193 instance=ExtResource("2_jkw7x")]
+[node name="Topmenu" parent="." unique_id=2042562126 instance=ExtResource("2_jkw7x")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = 93.0
-offset_right = 64.0
-offset_bottom = 157.0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+custom_text = "CREDITS"
 
-[connection signal="meta_clicked" from="Audio/Pinyin" to="." method="_on_pinyin_meta_clicked"]
+[connection signal="meta_clicked" from="Text" to="." method="_on_pinyin_meta_clicked"]

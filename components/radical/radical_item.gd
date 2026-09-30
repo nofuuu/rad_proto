@@ -54,6 +54,7 @@ func _on_mouse_exited() -> void:
 # ------------------------------------------------------------------------------
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		AudioManager.play_ui("click_003.ogg")
 		if Signals.selected_radical != null and Signals.selected_radical.radical_name == data.radical_name:
 			Signals.select_radical(null)
 		else:

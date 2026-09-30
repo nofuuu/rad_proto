@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://qivj78xehoag"]
+
+[ext_resource type="Script" uid="uid://ciwvvte2u2lww" path="res://menus/ui_buttons/settings.gd" id="1_r63lk"]
+[ext_resource type="PackedScene" uid="uid://1lmvol7gipxc" path="res://audio/volume.tscn" id="2_3ojw1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r63lk"]
+bg_color = Color(0.14509805, 0.1882353, 0.26666668, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Settings" type="Control" unique_id=749538582]
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+script = ExtResource("1_r63lk")
+
+[node name="Hide" type="Panel" parent="." unique_id=170235890]
+visible = false
+modulate = Color(1, 1, 1, 0.5686275)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1643.0
+offset_top = -930.5
+offset_right = 2866.0
+offset_bottom = 2363.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Settings" type="Button" parent="." unique_id=1019297193]
+z_index = 2
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 45
+text = "⚙"
+icon_alignment = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=644706762]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = -5.0
+offset_right = 345.0
+offset_bottom = 315.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r63lk")
+
+[node name="Volume" parent="Panel" unique_id=1652282969 instance=ExtResource("2_3ojw1")]
+layout_mode = 1
+offset_top = 10.0
+offset_bottom = 26.0
+
+[connection signal="gui_input" from="Hide" to="." method="_on_hide_gui_input"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

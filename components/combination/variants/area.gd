@@ -73,6 +73,9 @@ func _drop_data(pos, data):
 		set_radical(data)
 		Signals.composition_changed.emit()
 		return
+	# Locked areas cannot split or expand
+	if split_locked:
+		return
 	# ----- EXPAND -----
 	if parent_can_expand(zone):
 		expand_split(data, zone)

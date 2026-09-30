@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cyttsw7aw4c5e"]
 
 [ext_resource type="Script" uid="uid://be7eekt6erjhh" path="res://levels/loadlevels.gd" id="1_4ciuc"]
-[ext_resource type="PackedScene" uid="uid://dcy4u6d2i8hy" path="res://menus/return.tscn" id="2_nclhc"]
+[ext_resource type="PackedScene" uid="uid://0y0khtapu7qw" path="res://menus/topmenu.tscn" id="2_nclhc"]
 
 [node name="LoadLevels" type="Control" unique_id=856854476]
 layout_mode = 3
@@ -18,11 +18,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -334.0
-offset_top = 57.0
-offset_right = 198.0
-offset_bottom = 272.0
+offset_left = -283.0
+offset_top = 95.0
+offset_right = 249.0
+offset_bottom = 310.0
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 22
 text = "你好 你 好世 界丝"
 placeholder_text = "insert chinese characters"
 
@@ -76,18 +77,6 @@ grow_horizontal = 2
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 4
-
-[node name="Return" parent="." unique_id=1019297193 instance=ExtResource("2_nclhc")]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_bottom = 0.0
-offset_left = -138.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = 74.0
-grow_horizontal = 0
-grow_vertical = 1
 
 [node name="GameOptions" type="Label" parent="." unique_id=1457252189]
 layout_mode = 1
@@ -146,6 +135,15 @@ offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "START GAME"
+
+[node name="Topmenu" parent="." unique_id=2042562126 instance=ExtResource("2_nclhc")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+custom_text = "LOAD LEVELS"
 
 [connection signal="pressed" from="TextEdit/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]

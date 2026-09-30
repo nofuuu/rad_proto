@@ -9,18 +9,34 @@ offset_right = 98.0
 offset_bottom = 16.0
 script = ExtResource("1_gf4t3")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1390614835]
-layout_mode = 0
-offset_right = 109.0
-offset_bottom = 43.0
-
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=347250075]
-layout_mode = 2
+[node name="Label" type="Label" parent="." unique_id=347250075]
+layout_mode = 1
+offset_right = 350.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 20
 text = "VOLUME"
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer" unique_id=1364144460]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1390614835]
+layout_mode = 1
+offset_top = 28.0
+offset_right = 350.0
+offset_bottom = 228.0
+
+[node name="Master" type="HBoxContainer" parent="VBoxContainer" unique_id=568923417]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Master" unique_id=1683524838]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "MASTER"
+horizontal_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="VBoxContainer/Master" unique_id=1715600670]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
 min_value = -40.0
 max_value = 0.0
 rounded = true
@@ -28,4 +44,70 @@ tick_count = 5
 ticks_on_borders = true
 ticks_position = 3
 
-[connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[node name="Music" type="HBoxContainer" parent="VBoxContainer" unique_id=590557276]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Music" unique_id=1893463160]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "MUSIC"
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer/Music" unique_id=622056704]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+min_value = -40.0
+max_value = 0.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="Pinyin" type="HBoxContainer" parent="VBoxContainer" unique_id=1981755519]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Pinyin" unique_id=54916033]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "PINYIN"
+horizontal_alignment = 1
+
+[node name="PinyinSlider" type="HSlider" parent="VBoxContainer/Pinyin" unique_id=1489013522]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+min_value = -40.0
+max_value = 0.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="SFX" type="HBoxContainer" parent="VBoxContainer" unique_id=757235294]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/SFX" unique_id=260304453]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="VBoxContainer/SFX" unique_id=1601492845]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+min_value = -40.0
+max_value = 0.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 3
+
+[connection signal="value_changed" from="VBoxContainer/Master/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Music/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Pinyin/PinyinSlider" to="." method="_on_pinyin_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SFX/SFXSlider" to="." method="_on_sfx_slider_value_changed"]

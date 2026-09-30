@@ -1,6 +1,5 @@
 extends Control
 
-@onready var button_tutorial = $Buttons/Button_Tutorial
 @onready var button_levels = $Buttons/Button_Levels
 @onready var button_sandbox = $Buttons/Button_Sandbox
 
@@ -15,16 +14,16 @@ extends Control
 func _ready() -> void:
 	show_labels_sequentially()
 
-func _on_button_tutorial_pressed() -> void:
-	print("tutorial pressed")
-
 func _on_button_levels_pressed() -> void:
+	AudioManager.play_ui("click_003.ogg")
 	get_tree().change_scene_to_file("res://levels/loadlevels.tscn")
 
 func _on_button_sandbox_pressed() -> void:
+	AudioManager.play_ui("click_003.ogg")
 	get_tree().change_scene_to_file("res://levels/sandbox.tscn")
 	
 func _on_button_credits_pressed() -> void:
+	AudioManager.play_ui("click_003.ogg")
 	get_tree().change_scene_to_file("res://menus/credits.tscn")
 
 func show_labels_sequentially() -> void:

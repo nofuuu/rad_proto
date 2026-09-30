@@ -12,6 +12,7 @@ func _ready() -> void:
 	_update_menu_visibility()
 
 func _on_mode_pressed() -> void:
+	AudioManager.play_ui("click_003.ogg")
 	current_mode = (current_mode + 1) % 3
 	button.text = MODE_LABELS[current_mode]
 	_update_menu_visibility()

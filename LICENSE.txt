@@ -13,7 +13,7 @@ The database structures and audio assets integrated within this project
 are synthesized and derived from open-source projects and retain their original upstream 
 unmodified licenses located in the LICENSES/ folder:
 
-Audio & Voice Assets
+Voice Assets
 --------------------
 This game uses audio assets from the "audio-cmn" project by Hugo Lopez (PLIDAM, INALCO).
 
@@ -22,6 +22,13 @@ This game uses audio assets from the "audio-cmn" project by Hugo Lopez (PLIDAM, 
 * Source: https://github.com/hugolpz/audio-cmn
 * License: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 * File: LICENSES/cc-by-sa-4.0.txt
+
+Music
+--------------------
+The background music is "Ripples" by Kevin MacLeod
+"Ripples" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
 
 Database
 --------------------

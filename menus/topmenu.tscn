@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://0y0khtapu7qw"]
+
+[ext_resource type="PackedScene" uid="uid://dcy4u6d2i8hy" path="res://menus/ui_buttons/return.tscn" id="1_t14lc"]
+[ext_resource type="Script" uid="uid://b1wqi18hmgmpi" path="res://menus/topmenu.gd" id="1_v2jit"]
+[ext_resource type="PackedScene" uid="uid://qivj78xehoag" path="res://menus/ui_buttons/settings.tscn" id="2_v2jit"]
+
+[node name="Topmenu" type="Control" unique_id=2042562126]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v2jit")
+
+[node name="Return" parent="." unique_id=1019297193 instance=ExtResource("1_t14lc")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 22.0
+offset_top = 10.0
+offset_right = 86.0
+offset_bottom = 74.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Settings" parent="." unique_id=749538582 instance=ExtResource("2_v2jit")]
+layout_mode = 1
+offset_left = 108.0
+offset_top = 10.0
+offset_right = 172.0
+offset_bottom = 74.0
+
+[node name="Label" type="Label" parent="." unique_id=1681130903]
+custom_minimum_size = Vector2(300, 64)
+layout_mode = 0
+offset_left = 194.0
+offset_top = 10.0
+offset_right = 258.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1

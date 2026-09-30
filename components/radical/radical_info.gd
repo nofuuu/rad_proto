@@ -8,14 +8,15 @@ func _ready() -> void:
 	Signals.radical_selected.connect(_on_radical_selected)
 
 func _on_play_audio_pressed() -> void:
+	AudioManager.play_ui("click_003.ogg")
 	if not Signals.selected_radical:
 		print("Play audio skipped: No radical is currently selected.")
 		return
-	PinyinAudio.play_pinyin(Signals.selected_radical.pinyin)
+	AudioManager.play_pinyin(Signals.selected_radical.pinyin)
 
 func _empty_info() -> void:
-	radical_name.text = "-"
-	pinyin.text = "-"
+	radical_name.text = ""
+	pinyin.text = ""
 	radical.setup([])
 
 func _on_radical_selected(data):

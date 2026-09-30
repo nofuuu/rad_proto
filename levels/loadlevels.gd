@@ -9,6 +9,7 @@ var radical_builder = RadicalBuilder.new()
 var valid_char_queue: Array[String] = []
 
 func _on_button_pressed() -> void:
+	AudioManager.play_ui("click_003.ogg")
 	# Clear previosly loaded preview
 	for c in preview.get_children():
 		c.queue_free()
@@ -41,6 +42,7 @@ func build(data: Dictionary):
 	)
 
 func _on_start_game_pressed() -> void:
+	AudioManager.play_ui("click_003.ogg")
 	if valid_char_queue.is_empty():
 		print("No valid characters loaded to play!")
 		return

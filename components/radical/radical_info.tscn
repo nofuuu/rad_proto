@@ -3,23 +3,42 @@
 [ext_resource type="Script" uid="uid://c0650fh48w42f" path="res://components/radical/radical_info.gd" id="1_dtm74"]
 [ext_resource type="PackedScene" uid="uid://db24crqq5wysn" path="res://components/radical/radical_svg.tscn" id="2_4u6xc"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4u6xc"]
+bg_color = Color(0, 0, 0, 0.18039216)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="RadicalInfo" type="Control" unique_id=1655005382]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_dtm74")
 
+[node name="Panel" type="Panel" parent="." unique_id=948550925]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 210.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4u6xc")
+
 [node name="Label" type="Label" parent="." unique_id=211872764]
 layout_mode = 0
-offset_right = 192.0
-offset_bottom = 23.0
+offset_top = 3.0
+offset_right = 136.0
+offset_bottom = 26.0
 text = "RADICAL INFO"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1514386248]
 layout_mode = 0
-offset_top = 22.0
+offset_top = 26.0
 offset_right = 192.0
-offset_bottom = 124.0
+offset_bottom = 128.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=182167051]
 layout_mode = 2
