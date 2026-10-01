@@ -17,8 +17,8 @@ grow_vertical = 2
 
 [node name="MenuRadicals" parent="." unique_id=1375731284 instance=ExtResource("5_0glgv")]
 layout_mode = 1
-offset_top = 83.0
-offset_bottom = 83.0
+offset_top = 90.0
+offset_bottom = 90.0
 
 [node name="CombinationArea" parent="." unique_id=1215755804 instance=ExtResource("2_gck8l")]
 layout_mode = 1
@@ -48,10 +48,9 @@ offset_right = 152.0
 offset_bottom = 1166.0
 
 [node name="Topmenu" parent="." unique_id=2042562126 instance=ExtResource("6_gck8l")]
-layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
 custom_text = "SANDBOX"
+info_child_text = "
+
+
+
+				Drag & Drop radicals to the game area below"

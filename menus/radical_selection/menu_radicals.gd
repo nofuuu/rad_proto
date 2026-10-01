@@ -3,7 +3,7 @@ extends Control
 var current_mode: int = 0
 const MODE_LABELS = ["ALL ▼", "STROKE ▼", "CATEGORY ▼"]
 @onready var button: Button = $Mode
-@onready var menus: Array = [$MenuContainer/RadicalMenu,
+@onready var menus: Array = [$MenuContainer/MenuRadicalsAll,
  $MenuContainer/MenuRadicalsByStrokes]
 
 

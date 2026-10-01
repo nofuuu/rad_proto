@@ -88,7 +88,7 @@ func build_character_layout(ids_structure: String, raw_strokes: Variant, raw_str
 	if not unknown_leaf_ids.is_empty() and not null_indices.is_empty():
 		var nulls_per_leaf: int = ceili(float(null_indices.size()) / float(unknown_leaf_ids.size()))
 		for chunk_idx in range(null_indices.size()):
-			var unknown_leaf_target_idx = min(chunk_idx / nulls_per_leaf, unknown_leaf_ids.size() - 1)
+			var unknown_leaf_target_idx = min(int(float(chunk_idx) / nulls_per_leaf), unknown_leaf_ids.size() - 1)
 			stroke_mappings[null_indices[chunk_idx]] = unknown_leaf_ids[unknown_leaf_target_idx]
 	# Populate our final stroke groups
 	for i in range(raw_matches.size()):

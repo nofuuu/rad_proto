@@ -3,6 +3,13 @@
 [ext_resource type="Script" uid="uid://cquli3ybdyu2g" path="res://menus/radical_selection/menu_radicals_all.gd" id="1_86krj"]
 [ext_resource type="PackedScene" uid="uid://vw8kanq8gywl" path="res://components/radical/radical.tscn" id="2_twuqd"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr3q1"]
+bg_color = Color(0.26293245, 0.26293245, 0.26293242, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkfox"]
 content_margin_left = 8.0
 content_margin_right = 8.0
@@ -15,43 +22,41 @@ corner_radius_bottom_left = 8
 [sub_resource type="Theme" id="Theme_fr3q1"]
 VScrollBar/styles/scroll = SubResource("StyleBoxFlat_tkfox")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tkfox"]
-content_margin_left = 8.0
-content_margin_top = 8.0
-content_margin_right = 8.0
-content_margin_bottom = 4.0
-
-[node name="MenuRadicalsAll" type="Control" unique_id=2034713963]
-layout_mode = 3
+[node name="MenuRadicalsAll" type="Panel" unique_id=413432756]
+clip_children = 2
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -338.0
-offset_top = 16.0
-offset_right = 350.0
-offset_bottom = 509.0
+offset_left = -349.0
+offset_right = 349.0
+offset_bottom = 384.0
 grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fr3q1")
 script = ExtResource("1_86krj")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1294368897]
 custom_minimum_size = Vector2(0, 351)
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -328.0
-offset_right = 328.0
-offset_bottom = 335.0
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = -187.0
+offset_right = 345.0
+offset_bottom = 185.0
 grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_fr3q1")
 theme_override_constants/scrollbar_h_separation = 4
 theme_override_constants/scrollbar_v_separation = 0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_tkfox")
 horizontal_scroll_mode = 0
 scroll_hint_mode = 1
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=415326714]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/h_separation = 6
 theme_override_constants/v_separation = 6
 columns = 10

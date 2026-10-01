@@ -75,6 +75,9 @@ func _notification(what: int) -> void:
 		hide_overlay()
 		
 func _get_drag_data(_at_position: Vector2) -> Variant:
+	# Prevent empty boxes from being dragged
+	if radical == null:
+		return null
 	# preview container
 	var preview = PanelContainer.new()
 	preview.custom_minimum_size = Vector2(128, 128)

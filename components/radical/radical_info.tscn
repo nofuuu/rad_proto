@@ -2,13 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c0650fh48w42f" path="res://components/radical/radical_info.gd" id="1_dtm74"]
 [ext_resource type="PackedScene" uid="uid://db24crqq5wysn" path="res://components/radical/radical_svg.tscn" id="2_4u6xc"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4u6xc"]
-bg_color = Color(0, 0, 0, 0.18039216)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[ext_resource type="StyleBox" uid="uid://ct11o61nbf6oh" path="res://themes/transparent_panel.tres" id="2_w8v5q"]
 
 [node name="RadicalInfo" type="Control" unique_id=1655005382]
 layout_mode = 3
@@ -24,7 +18,7 @@ offset_right = 210.0
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_4u6xc")
+theme_override_styles/panel = ExtResource("2_w8v5q")
 
 [node name="Label" type="Label" parent="." unique_id=211872764]
 layout_mode = 0

@@ -33,12 +33,15 @@ offset_right = 20.0
 offset_bottom = 119.0
 grow_horizontal = 2
 
+[node name="MenuRadicalsAll" parent="MenuContainer" unique_id=413432756 instance=ExtResource("2_xs3wq")]
+layout_mode = 1
+
 [node name="RadicalMenu" parent="MenuContainer" unique_id=530804148 instance=ExtResource("2_xs3wq")]
+visible = false
 layout_mode = 1
 offset_left = -359.0
-offset_top = 0.0
 offset_right = 359.0
-offset_bottom = 572.0
+offset_bottom = 383.0
 
 [node name="MenuRadicalsByStrokes" parent="MenuContainer" unique_id=682274366 instance=ExtResource("3_cf2br")]
 layout_mode = 1
@@ -48,8 +51,8 @@ offset_bottom = 0.0
 [node name="RadicalInfo" parent="." unique_id=1655005382 instance=ExtResource("5_edcw7")]
 layout_mode = 1
 offset_left = -341.0
-offset_top = 465.0
+offset_top = 470.0
 offset_right = -341.0
-offset_bottom = 465.0
+offset_bottom = 470.0
 
 [connection signal="pressed" from="Mode" to="." method="_on_mode_pressed"]

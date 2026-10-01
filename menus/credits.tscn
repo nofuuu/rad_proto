@@ -58,12 +58,12 @@ The underlying game database was partially derived and synthesized using data fr
 fit_content = true
 
 [node name="Topmenu" parent="." unique_id=2042562126 instance=ExtResource("2_jkw7x")]
-layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
 custom_text = "CREDITS"
+info_child_text = "
+
+
+
+These are credits for the third party assets in the game.
+You can also check out the project on github!"
 
 [connection signal="meta_clicked" from="Text" to="." method="_on_pinyin_meta_clicked"]

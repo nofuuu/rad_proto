@@ -23,9 +23,10 @@ offset_top = 95.0
 offset_right = 249.0
 offset_bottom = 310.0
 grow_horizontal = 2
+theme_override_constants/line_spacing = 4
 theme_override_font_sizes/font_size = 22
-text = "你好 你 好世 界丝"
-placeholder_text = "insert chinese characters"
+placeholder_text = "Type or paste your custom Chinese text here, then click \"Load\" to prepare the game..."
+wrap_mode = 1
 
 [node name="Button" type="Button" parent="TextEdit" unique_id=1858234655]
 layout_mode = 1
@@ -37,6 +38,18 @@ offset_right = 128.0
 offset_bottom = 70.0
 grow_vertical = 0
 text = "LOAD"
+
+[node name="LoadFile" type="Button" parent="TextEdit" unique_id=304439033]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 149.0
+offset_top = 6.0
+offset_right = 279.0
+offset_bottom = 70.0
+grow_vertical = 0
+text = "LOAD FILE..."
 
 [node name="Label" type="Label" parent="." unique_id=2114935642]
 layout_mode = 1
@@ -64,16 +77,23 @@ offset_right = 280.0
 offset_bottom = 495.0
 grow_horizontal = 2
 
-[node name="Preview" type="GridContainer" parent="Label" unique_id=953236433]
+[node name="ScrollContainer" type="ScrollContainer" parent="Label" unique_id=1955352400]
+custom_minimum_size = Vector2(500, 430)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -250.0
-offset_top = 55.0
-offset_right = 250.0
-offset_bottom = 485.0
+offset_left = -275.0
+offset_top = 53.0
+offset_right = 275.0
+offset_bottom = 488.0
 grow_horizontal = 2
+
+[node name="Preview" type="GridContainer" parent="Label/ScrollContainer" unique_id=953236433]
+custom_minimum_size = Vector2(500, 430)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 4
@@ -84,9 +104,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -55.5
-offset_top = 925.0
+offset_top = 1009.0
 offset_right = 55.5
-offset_bottom = 948.0
+offset_bottom = 1032.0
 grow_horizontal = 2
 text = "Game Options"
 
@@ -100,26 +120,12 @@ offset_top = 44.0
 offset_right = 200.0
 offset_bottom = 108.0
 grow_horizontal = 2
+alignment = 1
 
-[node name="Button" type="Button" parent="GameOptions/HBoxContainer" unique_id=495903466]
+[node name="CheckBox" type="CheckBox" parent="GameOptions/HBoxContainer" unique_id=342880803]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "temp"
-
-[node name="Button2" type="Button" parent="GameOptions/HBoxContainer" unique_id=882701826]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "temp"
-
-[node name="Button3" type="Button" parent="GameOptions/HBoxContainer" unique_id=723643074]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "temp"
-
-[node name="Button4" type="Button" parent="GameOptions/HBoxContainer" unique_id=1466911099]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "temp"
+disabled = true
+text = "RANDOMIZE ORDER"
 
 [node name="StartGame" type="Button" parent="." unique_id=1840605609]
 layout_mode = 1
@@ -137,13 +143,27 @@ grow_vertical = 0
 text = "START GAME"
 
 [node name="Topmenu" parent="." unique_id=2042562126 instance=ExtResource("2_nclhc")]
-layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
-custom_text = "LOAD LEVELS"
+custom_text = "GAME SETUP"
+info_child_text = "
+
+
+
+This is where you can load characters to be used in the game.
+
+Use premade sets, or load your custom set using the textbox or a .txt file.
+
+Beware this is still experimental and some characters may not work."
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=164472564]
+oversampling_override = 1.0
+title = "Open a File"
+file_mode = 0
+display_mode = 1
+access = 2
+filters = PackedStringArray("*.txt")
+use_native_dialog = true
 
 [connection signal="pressed" from="TextEdit/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextEdit/LoadFile" to="." method="_on_load_file_pressed"]
 [connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

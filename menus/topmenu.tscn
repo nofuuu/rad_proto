@@ -1,20 +1,22 @@
 [gd_scene format=3 uid="uid://0y0khtapu7qw"]
 
+[ext_resource type="Script" uid="uid://b1wqi18hmgmpi" path="res://menus/topmenu.gd" id="1_p7jso"]
 [ext_resource type="PackedScene" uid="uid://dcy4u6d2i8hy" path="res://menus/ui_buttons/return.tscn" id="1_t14lc"]
-[ext_resource type="Script" uid="uid://b1wqi18hmgmpi" path="res://menus/topmenu.gd" id="1_v2jit"]
+[ext_resource type="StyleBox" uid="uid://ct11o61nbf6oh" path="res://themes/transparent_panel.tres" id="2_ud2xg"]
 [ext_resource type="PackedScene" uid="uid://qivj78xehoag" path="res://menus/ui_buttons/settings.tscn" id="2_v2jit"]
+[ext_resource type="PackedScene" uid="uid://c1enkp1jsl18d" path="res://menus/ui_buttons/info.tscn" id="4_p7jso"]
 
-[node name="Topmenu" type="Control" unique_id=2042562126]
-layout_mode = 3
-anchors_preset = 15
+[node name="Topmenu" type="CanvasLayer" unique_id=881280296]
+script = ExtResource("1_p7jso")
+
+[node name="Panel" type="Panel" parent="." unique_id=737496940]
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_bottom = 84.0
 grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_v2jit")
+theme_override_styles/panel = ExtResource("2_ud2xg")
 
 [node name="Return" parent="." unique_id=1019297193 instance=ExtResource("1_t14lc")]
-layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -26,7 +28,6 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="Settings" parent="." unique_id=749538582 instance=ExtResource("2_v2jit")]
-layout_mode = 1
 offset_left = 108.0
 offset_top = 10.0
 offset_right = 172.0
@@ -34,11 +35,13 @@ offset_bottom = 74.0
 
 [node name="Label" type="Label" parent="." unique_id=1681130903]
 custom_minimum_size = Vector2(300, 64)
-layout_mode = 0
 offset_left = 194.0
 offset_top = 10.0
 offset_right = 258.0
 offset_bottom = 74.0
 theme_override_font_sizes/font_size = 40
+text = "Default Text"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Info" parent="." unique_id=232262138 instance=ExtResource("4_p7jso")]
