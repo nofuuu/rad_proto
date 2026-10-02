@@ -1,5 +1,0 @@
-Kenney interface sounds:
-click_003.ogg
-
-Kenney casino sounds:
-card-place-4.ogg (modified)

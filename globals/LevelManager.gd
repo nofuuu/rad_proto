@@ -13,8 +13,9 @@ func reset_queue(new_queue: Array[String]):
 
 # Advance to the next character
 func advance_character():
-	current_char_index += 1
-	current_char_data = Database.get_character_data(char_queue[current_char_index])
+	if has_next_character():
+		current_char_index += 1
+		current_char_data = Database.get_character_data(char_queue[current_char_index])
 	
 # Helper to check if there are more characters left
 func has_next_character() -> bool:

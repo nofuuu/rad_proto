@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://0y0khtapu7qw"]
 
-[ext_resource type="Script" uid="uid://b1wqi18hmgmpi" path="res://menus/topmenu.gd" id="1_p7jso"]
-[ext_resource type="PackedScene" uid="uid://dcy4u6d2i8hy" path="res://menus/ui_buttons/return.tscn" id="1_t14lc"]
+[ext_resource type="Script" uid="uid://b1wqi18hmgmpi" path="res://menus/top_nav/topmenu.gd" id="1_p7jso"]
 [ext_resource type="StyleBox" uid="uid://ct11o61nbf6oh" path="res://themes/transparent_panel.tres" id="2_ud2xg"]
-[ext_resource type="PackedScene" uid="uid://qivj78xehoag" path="res://menus/ui_buttons/settings.tscn" id="2_v2jit"]
-[ext_resource type="PackedScene" uid="uid://c1enkp1jsl18d" path="res://menus/ui_buttons/info.tscn" id="4_p7jso"]
+[ext_resource type="PackedScene" uid="uid://qivj78xehoag" path="res://menus/top_nav/settings.tscn" id="2_v2jit"]
+[ext_resource type="PackedScene" uid="uid://c1enkp1jsl18d" path="res://menus/top_nav/info.tscn" id="4_p7jso"]
+
+[sub_resource type="GDScript" id="GDScript_npdpy"]
+script/source = "extends Button
+
+func _on_pressed() -> void:
+	AudioManager.play_ui(\"click_003.ogg\")
+	get_tree().change_scene_to_file(\"res://menus/menu.tscn\")
+"
 
 [node name="Topmenu" type="CanvasLayer" unique_id=881280296]
 script = ExtResource("1_p7jso")
@@ -16,16 +23,15 @@ offset_bottom = 84.0
 grow_horizontal = 2
 theme_override_styles/panel = ExtResource("2_ud2xg")
 
-[node name="Return" parent="." unique_id=1019297193 instance=ExtResource("1_t14lc")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Return" type="Button" parent="." unique_id=1019297193]
+custom_minimum_size = Vector2(64, 64)
 offset_left = 22.0
 offset_top = 10.0
 offset_right = 86.0
 offset_bottom = 74.0
-grow_horizontal = 1
-grow_vertical = 1
+theme_override_font_sizes/font_size = 30
+text = "❮"
+script = SubResource("GDScript_npdpy")
 
 [node name="Settings" parent="." unique_id=749538582 instance=ExtResource("2_v2jit")]
 offset_left = 108.0
@@ -45,3 +51,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Info" parent="." unique_id=232262138 instance=ExtResource("4_p7jso")]
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

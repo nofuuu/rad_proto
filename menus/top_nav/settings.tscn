@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://qivj78xehoag"]
 
-[ext_resource type="Script" uid="uid://ciwvvte2u2lww" path="res://menus/ui_buttons/settings.gd" id="1_r63lk"]
+[ext_resource type="Script" uid="uid://ciwvvte2u2lww" path="res://menus/top_nav/settings.gd" id="1_r63lk"]
 [ext_resource type="PackedScene" uid="uid://1lmvol7gipxc" path="res://audio/volume.tscn" id="2_3ojw1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r63lk"]

@@ -23,3 +23,8 @@ func _ready() -> void:
 	var sub_node = get_node_or_null("Info/InfoTextLabel")
 	if sub_node:
 		sub_node.text = info_child_text
+
+
+func _on_return_pressed() -> void:
+	AudioManager.play_ui("click_003.ogg")
+	get_tree().change_scene_to_file("res://menus/menu.tscn")

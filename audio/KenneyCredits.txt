@@ -1,0 +1,7 @@
+Kenney interface sounds:
+click_003
+error_004
+confirmation_002
+
+Kenney casino sounds:
+card-place-4 (modified)

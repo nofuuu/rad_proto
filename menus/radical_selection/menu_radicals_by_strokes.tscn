@@ -1,10 +1,6 @@
 [gd_scene format=3 uid="uid://c3fdkaoc3yoxb"]
 
 [ext_resource type="Script" uid="uid://dav8xoposlcx" path="res://menus/radical_selection/menu_radicals_by_strokes.gd" id="1_jcexm"]
-[ext_resource type="PackedScene" uid="uid://vw8kanq8gywl" path="res://components/radical/radical.tscn" id="2_xnsq0"]
-
-[sub_resource type="Theme" id="Theme_xnsq0"]
-default_font_size = 30
 
 [node name="MenuRadicalsByStrokes" type="Control" unique_id=682274366]
 layout_mode = 3
@@ -15,7 +11,6 @@ offset_top = 8.0
 offset_bottom = 8.0
 grow_horizontal = 2
 script = ExtResource("1_jcexm")
-radical_item_scene = ExtResource("2_xnsq0")
 
 [node name="TabContainer" type="TabContainer" parent="." unique_id=383545427]
 custom_minimum_size = Vector2(700, 0)
@@ -27,7 +22,7 @@ offset_left = -350.0
 offset_right = 350.0
 offset_bottom = 50.0
 grow_horizontal = 2
-theme = SubResource("Theme_xnsq0")
+theme_override_font_sizes/font_size = 30
 tab_alignment = 1
 current_tab = 0
 deselect_enabled = true

@@ -46,9 +46,9 @@ func _create_player(bus_name: String) -> AudioStreamPlayer:
 	add_child(player)
 	return player
 	
-# -------------------------
-# VOLUME
-# -------------------------
+# ==============================================================================
+# VOLUME MANAGEMENT
+# ==============================================================================
 func set_bus_volume(bus_name: StringName, value_db: float) -> void:
 	var index := AudioServer.get_bus_index(bus_name)
 	if index < 0:
@@ -67,9 +67,11 @@ func get_bus_volume(bus_name: StringName) -> float:
 	if AudioServer.is_bus_mute(index):
 		return MIN_VOLUME_DB
 	return AudioServer.get_bus_volume_db(index)
-# -------------------------
-# PINYIN
-# -------------------------
+	
+
+# ==============================================================================
+# PINYIN PRONUNCIATION
+# ==============================================================================
 func clean_pinyin(input: String) -> String:
 	if input.is_empty():
 		return ""
@@ -98,10 +100,11 @@ func play_pinyin(pinyin: String) -> void :
 		pinyin_player.play()
 	else:
 		push_error("Pinyin audio file not found at: " + file_path)
-	
-# -------------------------
-# Music
-# -------------------------
+
+
+# ==============================================================================
+# BACKGROUND MUSIC
+# ==============================================================================
 func play_music() -> void:
 	if not ResourceLoader.exists(BACKGROUND_MUSIC):
 		push_error("Music file not found: " + BACKGROUND_MUSIC)
@@ -116,9 +119,9 @@ func play_music() -> void:
 	music_player.stream = stream
 	music_player.play()
 
-# -------------------------
+# ==============================================================================
 # SFX
-# -------------------------
+# ==============================================================================
 func play_sfx(file_name: String) -> void:
 	_play_from_pool(
 		SFX_FOLDER + file_name,
@@ -131,6 +134,9 @@ func play_ui(file_name: String) -> void:
 		ui_players
 	)
 
+# ==============================================================================
+# RECYCLING SOUND POOL
+# ==============================================================================
 func _play_from_pool(
 	path: String,
 	pool: Array[AudioStreamPlayer]

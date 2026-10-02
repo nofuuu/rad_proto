@@ -4,7 +4,7 @@ extends InteractionArea
 
 const EDGE_SIZE = 0.25
 
-var split_type : String = ""
+#var split_type : String = ""
 
 var parent : Node = null
 
@@ -68,13 +68,13 @@ func parent_can_expand(zone) -> bool:
 # ------------------------------------------------------------------------------
 func _drop_data(pos, data):
 	var zone = get_hover_zone(pos)
+	# Locked areas cannot split or expand, but center radical can be changed
+	if split_locked:
+		zone = "center"
 	# ----- CENTER -----
 	if zone == "center":
 		set_radical(data)
 		Signals.composition_changed.emit()
-		return
-	# Locked areas cannot split or expand
-	if split_locked:
 		return
 	# ----- EXPAND -----
 	if parent_can_expand(zone):

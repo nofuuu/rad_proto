@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://blmrq82wlims2"]
 
 [ext_resource type="Script" uid="uid://8lu1ajte43fi" path="res://menus/credits.gd" id="1_xlg2h"]
-[ext_resource type="PackedScene" uid="uid://0y0khtapu7qw" path="res://menus/topmenu.tscn" id="2_jkw7x"]
+[ext_resource type="PackedScene" uid="uid://0y0khtapu7qw" path="res://menus/top_nav/topmenu.tscn" id="2_jkw7x"]
 
 [node name="Credits" type="Control" unique_id=2066084845]
 layout_mode = 3
@@ -14,35 +14,36 @@ script = ExtResource("1_xlg2h")
 
 [node name="Text" type="RichTextLabel" parent="." unique_id=313547767]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -325.0
-offset_top = -412.5
+offset_top = 105.0
 offset_right = 325.0
-offset_bottom = 412.5
+offset_bottom = 1263.0
 grow_horizontal = 2
-grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "[center][font_size=24]THIRD-PARTY CREDITS[/font_size][/center]
+text = "[center][font_size=30][color=#c0c4de]THIRD-PARTY CREDITS[/color][/font_size][/center]
 
-[font_size=18] Voice Assets[/font_size]
+[color=#b0c4de][font_size=24] Voice Assets[/font_size][/color]
 This game uses audio assets from the \"audio-cmn\" project by Hugo Lopez (PLIDAM, INALCO).
 
-* Asset: Chinese Syllables Audio Dataset (1,707 items, 64k compression)
+* Assets: Chinese Syllables Audio Dataset (1,707 items, 64k compression)
 * Voice Artist: Chen Wang
 * Source: [url=https://github.com/hugolpz/audio-cmn]https://github.com/hugolpz/audio-cmn[/url]
 * License: [url=https://creativecommons.org/licenses/by-sa/4.0/]Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)[/url]
 
-[font_size=18] Music [/font_size]
-The background music is \"Ripples\" by Kevin MacLeod
-\"Ripples\" Kevin MacLeod (incompetech.com)
+[color=#b0c4de][font_size=24] Music [/font_size][/color]
+\"Ripples\" Kevin MacLeod ([url=https://incompetech.com]incompetech.com[/url])
 Licensed under Creative Commons: By Attribution 4.0 License
 http://creativecommons.org/licenses/by/4.0/
 
-[font_size=18]Database[/font_size]
+[color=#b0c4de][font_size=24] SFX [/font_size][/color]
+Sound effects by Kenney ([url=https://kenney.nl]kenney.nl[/url]).
+Licensed under Creative Commons Zero (CC0) Public Domain.
+
+[color=#b0c4de][font_size=24]Database[/font_size][/color]
 The underlying game database was partially derived and synthesized using data from the following open-source projects:
 
 * Project: Make Me a Hanzi
@@ -53,7 +54,7 @@ The underlying game database was partially derived and synthesized using data fr
 * Source: [url=https://github.com/chise/ids]https://github.com/chise/ids[/url]
 * License: GNU General Public License (GPL) version 2
 
-[i]Note: The audio files and source database structures are distributed under their respective open-source licenses. The inclusion of these data points and assets does not extend their licenses (such as CC BY-SA or GPL) to the game's underlying custom source code, engine mechanics, or unrelated proprietary files, which remain under their own respective licenses.[/i]
+[i]Note: The audio files and source database structures are distributed under their respective open-source licenses. The inclusion of these data points and assets does not extend their licenses to the game's underlying custom source code, engine mechanics, or unrelated proprietary files, which remain under their own respective licenses.[/i]
 "
 fit_content = true
 
@@ -66,4 +67,4 @@ info_child_text = "
 These are credits for the third party assets in the game.
 You can also check out the project on github!"
 
-[connection signal="meta_clicked" from="Text" to="." method="_on_pinyin_meta_clicked"]
+[connection signal="meta_clicked" from="Text" to="." method="_on_text_meta_clicked"]

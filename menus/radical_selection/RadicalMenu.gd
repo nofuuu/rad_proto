@@ -12,6 +12,7 @@ func _on_radical_selected(radical_data) -> void:
 # ------------------------------------------------------------------------------
 # Highlight selected
 # ------------------------------------------------------------------------------
+## Refreshes highlights
 func _refresh_highlights() -> void:
 	var target_data = Signals.selected_radical
 	if has_node("ScrollContainer/GridContainer"):
@@ -19,6 +20,7 @@ func _refresh_highlights() -> void:
 	elif has_node("TabContainer"):
 		highlight_selected(get_node("TabContainer"), target_data)
 		
+## Highlights selected radical with the help of a signal
 func highlight_selected(node: Node, radical_data) -> void:
 	for child in node.get_children():
 		if child.has_method("highlight_item"):

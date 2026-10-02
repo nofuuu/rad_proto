@@ -5,6 +5,7 @@ class_name InteractionArea
 
 @onready var radical_svg: RadicalSVG = $Radical
 
+var split_type : String = ""
 var split_locked: bool = false
 
 var radical : Radical
@@ -48,10 +49,12 @@ func unset_radical():
 # Hover
 # ------------------------------------------------------------------------------
 func _can_drop_data(pos, _data):
-	var zone = get_hover_zone(pos)
-	if split_locked and zone != "center":
-		hide_overlay()
+	# Guard clause: Stop the edge "sliver" bug if this node is already a split parent
+	if split_type != "":
 		return false
+	var zone = get_hover_zone(pos)
+	if split_locked:
+		zone = "center"
 	show_hover(zone)
 	return true
 

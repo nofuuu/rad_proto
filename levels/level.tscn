@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://d1f5xqneeohtn" path="res://levels/preview.gd" id="3_safpt"]
 [ext_resource type="PackedScene" uid="uid://10lf1vvdestr" path="res://components/combination/variants/area.tscn" id="3_vnv7o"]
 [ext_resource type="PackedScene" uid="uid://db24crqq5wysn" path="res://components/radical/radical_svg.tscn" id="4_gjl0y"]
-[ext_resource type="PackedScene" uid="uid://0y0khtapu7qw" path="res://menus/topmenu.tscn" id="6_gjl0y"]
+[ext_resource type="PackedScene" uid="uid://0y0khtapu7qw" path="res://menus/top_nav/topmenu.tscn" id="6_gjl0y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xopy3"]
 corner_radius_top_left = 4
@@ -173,22 +173,42 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_u55m2")
 [node name="Radical" parent="Preview/Area" unique_id=1677251188 instance=ExtResource("4_gjl0y")]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="." unique_id=964646945]
-layout_mode = 0
-offset_left = 78.0
-offset_top = 1062.0
-offset_right = 190.0
-offset_bottom = 1102.0
-text = "test: next char"
+[node name="CheckAnswerButton" type="Button" parent="." unique_id=964646945]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -123.0
+offset_top = -97.0
+offset_right = 123.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "CHECK ANSWER"
+
+[node name="SkipButton" type="Button" parent="." unique_id=1922104864]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -270.0
+offset_top = -97.0
+offset_right = -142.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "SKIP"
 
 [node name="Topmenu" parent="." unique_id=2042562126 instance=ExtResource("6_gjl0y")]
-layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
 custom_text = "LEVELS"
+info_child_text = "
+
+
+Drag & Drop the cards into the game area and try to match the example!"
 
 [node name="ScatterArea" type="Control" parent="." unique_id=1831547268]
 layout_mode = 1
@@ -197,9 +217,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -330.5
+offset_left = -331.0
 offset_top = -311.5
-offset_right = 330.5
+offset_right = 331.0
 offset_bottom = 311.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -207,4 +227,5 @@ mouse_filter = 2
 
 [connection signal="gui_input" from="CombinationArea" to="CombinationArea" method="_on_gui_input"]
 [connection signal="gui_input" from="Preview" to="Preview" method="_on_gui_input"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CheckAnswerButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]
