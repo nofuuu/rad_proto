@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://du4dc4fqdblgt"]
 
+[ext_resource type="Script" uid="uid://ca6h1yjmkh2sg" path="res://levels/results.gd" id="1_nyy2h"]
 [ext_resource type="PackedScene" uid="uid://0y0khtapu7qw" path="res://menus/top_nav/topmenu.tscn" id="6_mibia"]
 
 [node name="Results" type="Control" unique_id=1200600860]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nyy2h")
 
 [node name="Topmenu" parent="." unique_id=2042562126 instance=ExtResource("6_mibia")]
 custom_text = "RESULTS"
@@ -17,18 +19,23 @@ info_child_text = "
 
 Here you can see some statistics from the game you just played."
 
-[node name="Label" type="Label" parent="." unique_id=1268673645]
+[node name="Text" type="RichTextLabel" parent="." unique_id=274287273]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -58.0
-offset_top = -15.5
-offset_right = 58.0
-offset_bottom = 15.5
+offset_left = -325.0
+offset_top = 105.0
+offset_right = 325.0
+offset_bottom = 1263.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 22
-text = "YOU WIN :)"
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center][font_size=30][color=#c0c4de]STATISTICS[/color][/font_size][/center]
+
+[color=#b0c4de][font_size=24] SKIPPED {skipped}[/font_size][/color]
+{skipped_chars}
+
+[color=#b0c4de][font_size=24] MISTAKES {mistakes}[/font_size][/color]
+{mistake_chars}"
+fit_content = true

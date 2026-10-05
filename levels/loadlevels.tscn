@@ -199,15 +199,14 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -200.0
-offset_top = 35.0
+offset_top = 57.0
 offset_right = 200.0
-offset_bottom = 99.0
+offset_bottom = 121.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="CheckBox" type="CheckBox" parent="GameOptions/HBoxContainer" unique_id=342880803]
+[node name="Randomize" type="CheckBox" parent="GameOptions/HBoxContainer" unique_id=342880803]
 layout_mode = 2
-disabled = true
 text = "RANDOMIZE ORDER"
 
 [node name="StartGame" type="Button" parent="." unique_id=1840605609]
@@ -251,5 +250,6 @@ use_native_dialog = true
 [connection signal="pressed" from="TabContainer/PRESETS/ScrollContainer/PresetContainer/Test3" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="TabContainer/CUSTOM/TextEdit/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="TabContainer/CUSTOM/TextEdit/LoadFile" to="." method="_on_load_file_pressed"]
+[connection signal="toggled" from="GameOptions/HBoxContainer/Randomize" to="." method="_on_randomize_toggled"]
 [connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

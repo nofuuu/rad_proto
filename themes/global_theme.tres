@@ -27,8 +27,23 @@ corner_radius_bottom_left = 4
 shadow_size = 2
 shadow_offset = Vector2(0, 2)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apcy4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xlh88"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ub4iq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6gghl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gqqud"]
+
 [resource]
 Button/font_sizes/font_size = 22
 Button/styles/hover = SubResource("StyleBoxFlat_xlh88")
 Button/styles/normal = SubResource("StyleBoxFlat_apcy4")
 Button/styles/pressed = SubResource("StyleBoxFlat_ub4iq")
+CheckBox/styles/disabled = SubResource("StyleBoxEmpty_apcy4")
+CheckBox/styles/hover = SubResource("StyleBoxEmpty_xlh88")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxEmpty_ub4iq")
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_6gghl")
+CheckBox/styles/pressed = SubResource("StyleBoxEmpty_gqqud")

@@ -6,6 +6,8 @@ extends Control
 @onready var start_button = $StartGame
 @onready var preset_container = $TabContainer/PRESETS/ScrollContainer/PresetContainer
 
+var is_randomized = false
+
 const ROOT_SCENE = preload("res://levels/preview_area.tscn")
 const PRESETS_FOLDER_PATH = "res://levels/presets/"
 var radical_builder = RadicalBuilder.new()
@@ -127,6 +129,14 @@ func _on_start_game_pressed() -> void:
 	if valid_char_queue.is_empty():
 		print("No valid characters loaded to play!")
 		return
+	var final_queue = valid_char_queue.duplicate()
+	# Shuffle if randomized toggled on
+	if is_randomized:
+		final_queue.shuffle()
 	# Save valid characters to level manager
-	LevelManager.reset_queue(valid_char_queue)
+	LevelManager.reset_queue(final_queue)
 	get_tree().change_scene_to_file("res://levels/level.tscn")
+
+func _on_randomize_toggled(toggled_on: bool) -> void:
+	AudioManager.play_ui("click_003.ogg")
+	is_randomized = toggled_on

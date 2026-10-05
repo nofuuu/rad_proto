@@ -1,6 +1,16 @@
 [gd_scene format=3 uid="uid://f7gmtnhhyupf"]
 
 [ext_resource type="Script" uid="uid://dmxrdi2slbkc3" path="res://menus/menu_main.gd" id="1_85u52"]
+[ext_resource type="Script" uid="uid://d1f5xqneeohtn" path="res://levels/preview.gd" id="2_hl3ms"]
+[ext_resource type="PackedScene" uid="uid://db24crqq5wysn" path="res://components/radical/radical_svg.tscn" id="3_2d4ws"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hl3ms"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2d4ws"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jayei"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gduqu"]
 
 [node name="Menu" type="Control" unique_id=1601783706]
 layout_mode = 3
@@ -41,81 +51,174 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "CREDITS"
 
-[node name="Title" type="HBoxContainer" parent="." unique_id=1222521321]
+[node name="Char1A" type="Control" parent="." unique_id=2096530485]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 159.0
+offset_bottom = 287.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+script = ExtResource("2_hl3ms")
+
+[node name="Area" type="PanelContainer" parent="Char1A" unique_id=1540035505]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -186.0
-offset_top = -255.5
-offset_right = 186.0
-offset_bottom = -210.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hl3ms")
 
-[node name="Label" type="Label" parent="Title" unique_id=1816812024]
-layout_mode = 2
-theme_override_font_sizes/font_size = 31
-text = "Learn"
-
-[node name="Control" type="Control" parent="Title" unique_id=1977501248]
-custom_minimum_size = Vector2(70, 0)
+[node name="Radical" parent="Char1A/Area" unique_id=1677251188 instance=ExtResource("3_2d4ws")]
 layout_mode = 2
 
-[node name="1" type="Label" parent="Title/Control" unique_id=1415708222]
+[node name="Char1B" type="Control" parent="." unique_id=1410999095]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
-offset_left = -6.0
-offset_right = 26.0
-offset_bottom = 45.0
-theme_override_font_sizes/font_size = 32
-text = "氵"
-horizontal_alignment = 2
-vertical_alignment = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 159.0
+offset_bottom = 287.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+script = ExtResource("2_hl3ms")
 
-[node name="2" type="Label" parent="Title/Control" unique_id=664459900]
+[node name="Area" type="PanelContainer" parent="Char1B" unique_id=1008055429]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
-offset_left = 9.0
-offset_right = 49.0
-offset_bottom = 45.0
-theme_override_font_sizes/font_size = 32
-text = "又 "
-vertical_alignment = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2d4ws")
 
-[node name="3" type="Label" parent="Title/Control" unique_id=690681548]
+[node name="Radical" parent="Char1B/Area" unique_id=1474358948 instance=ExtResource("3_2d4ws")]
+layout_mode = 2
+
+[node name="Char2A" type="Control" parent="." unique_id=732232205]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -32.0
-offset_top = -8.0
-offset_bottom = 37.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 32
-text = "宀"
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 159.0
+offset_right = 128.0
+offset_bottom = 287.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+script = ExtResource("2_hl3ms")
+
+[node name="Area" type="PanelContainer" parent="Char2A" unique_id=1597206996]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jayei")
+
+[node name="Radical" parent="Char2A/Area" unique_id=755154872 instance=ExtResource("3_2d4ws")]
+layout_mode = 2
+
+[node name="Char2B" type="Control" parent="." unique_id=927527616]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 159.0
+offset_right = 128.0
+offset_bottom = 287.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+script = ExtResource("2_hl3ms")
+
+[node name="Area" type="PanelContainer" parent="Char2B" unique_id=1463241404]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gduqu")
+
+[node name="Radical" parent="Char2B/Area" unique_id=130967195 instance=ExtResource("3_2d4ws")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=1816812024]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 87.0
+offset_right = 55.5
+offset_bottom = 142.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Assemble"
 horizontal_alignment = 1
-vertical_alignment = 2
 
-[node name="4" type="Label" parent="Title/Control" unique_id=1066394035]
+[node name="Label2" type="Label" parent="." unique_id=570718468]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -29.0
-offset_top = 8.0
-offset_right = -3.0
-offset_bottom = 44.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 26
-text = "子"
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -123.0
+offset_top = 315.0
+offset_right = 123.0
+offset_bottom = 370.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Build & Discover"
 horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Title" unique_id=570718468]
-layout_mode = 2
-theme_override_font_sizes/font_size = 31
-text = "with radicals"
 
 [connection signal="pressed" from="Buttons/Button_Levels" to="." method="_on_button_levels_pressed"]
 [connection signal="pressed" from="Buttons/Button_Sandbox" to="." method="_on_button_sandbox_pressed"]
 [connection signal="pressed" from="Buttons/Button_Credits" to="." method="_on_button_credits_pressed"]
+[connection signal="gui_input" from="Char1A" to="Char1A" method="_on_gui_input"]
+[connection signal="gui_input" from="Char1B" to="Char1B" method="_on_gui_input"]
+[connection signal="gui_input" from="Char2A" to="Char2A" method="_on_gui_input"]
+[connection signal="gui_input" from="Char2B" to="Char2B" method="_on_gui_input"]

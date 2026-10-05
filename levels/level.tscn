@@ -181,9 +181,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -123.0
-offset_top = -97.0
+offset_top = -126.0
 offset_right = 123.0
-offset_bottom = -33.0
+offset_bottom = -62.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "CHECK ANSWER"
@@ -196,9 +196,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -270.0
-offset_top = -97.0
+offset_top = -126.0
 offset_right = -142.0
-offset_bottom = -33.0
+offset_bottom = -62.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "SKIP"
@@ -224,6 +224,17 @@ offset_bottom = 311.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1224319195]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+show_percentage = false
 
 [connection signal="gui_input" from="CombinationArea" to="CombinationArea" method="_on_gui_input"]
 [connection signal="gui_input" from="Preview" to="Preview" method="_on_gui_input"]

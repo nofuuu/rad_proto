@@ -4,12 +4,14 @@ extends Control
 @onready var game_area = $CombinationArea
 var radical_builder = RadicalBuilder.new()
 var radical_menu : RadicalMenu = RadicalMenu.new()
+@onready var progress : ProgressBar = $ProgressBar
 
 @onready var scatter_area: Control = $ScatterArea
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_current_level_character()
+	load_progressbar()
 
 func load_current_level_character():
 	var data = LevelManager.current_char_data
@@ -31,12 +33,28 @@ func load_current_level_character():
 	# Extract radicals from the structure, clear them from inside, and scatter them outside
 	extract_and_scatter_radicals(game_area.get_node("Area"))
 	
+func load_progressbar():
+	progress.max_value = LevelManager.char_queue.size()
+	var target_value = LevelManager.current_char_index
+	# If this isn't the very first character, start slightly behind for a smooth catch-up effect
+	if target_value > 0:
+		progress.value = target_value - 1
+		var tween = create_tween()
+		tween.tween_property(progress, "value", target_value, 0.4).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	else:
+		progress.value = target_value
+	
 func _next_character():
 	if LevelManager.has_next_character():
 		LevelManager.advance_character()
 		# Reload the level scene for next character
 		get_tree().reload_current_scene()
 	else:
+		# hit last character, animate the progress bar filling to the max
+		var tween = create_tween()
+		tween.tween_property(progress, "value", progress.max_value, 0.4).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+		# Wait for the fill animation to finish playing
+		await tween.finished
 		get_tree().change_scene_to_file("res://levels/results.tscn")
 
 func _on_button_pressed() -> void:
@@ -119,6 +137,7 @@ func check_win_condition() -> void:
 		_next_character()
 	else:
 		AudioManager.play_sfx("error_004.ogg")
+		LevelManager.mistake()
 
 ## Recursively parses nodes evaluating player slots against expected meta configurations
 func _is_character_correct(node: Node) -> bool:
@@ -139,4 +158,5 @@ func _is_character_correct(node: Node) -> bool:
 
 func _on_skip_button_pressed() -> void:
 	AudioManager.play_ui("click_003.ogg")
+	LevelManager.skip()
 	_next_character()
