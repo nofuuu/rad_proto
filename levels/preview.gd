@@ -8,4 +8,4 @@ extends Control
 # ------------------------------------------------------------------------------
 func set_character(strokes):
 	radical_svg.visible = true
-	radical_svg.setup(JSON.parse_string(strokes))
+	radical_svg.setup_strokes(JSON.parse_string(strokes))

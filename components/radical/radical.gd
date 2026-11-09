@@ -9,3 +9,4 @@ class_name Radical
 @export var shape: String = ""          # ""
 @export var svg_strokes: Array = []
 @export var svg_medians: Array = []
+@export var current_variant = 0

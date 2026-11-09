@@ -10,6 +10,8 @@ var split_locked: bool = false
 
 var radical : Radical
 
+var parent : Node = null
+
 
 # ------------------------------------------------------------------------------
 # Lock
@@ -37,7 +39,7 @@ func set_radical(data):
 	radical = data.get("radical")
 	if radical:
 		radical_svg.visible = true
-		radical_svg.setup(radical.svg_strokes)
+		radical_svg.setup(radical)
 	else:
 		unset_radical()
 	
@@ -91,7 +93,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 		# Explicitly assign size before calling setup so the SVG generates at 128x128
 		preview_svg.size = Vector2(128, 128)
 		preview_svg.custom_minimum_size = Vector2(128, 128)
-		preview_svg.setup(radical.svg_strokes)
+		preview_svg.setup(radical)
 	preview.modulate.a = 0.2
 	set_drag_preview(preview)
 	return {

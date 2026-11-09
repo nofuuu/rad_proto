@@ -8,15 +8,18 @@ var radical_menu : RadicalMenu = RadicalMenu.new()
 
 @onready var scatter_area: Control = $ScatterArea
 
+@onready var template = $Preview/CharacterInfo
+@onready var pinyin = $Preview/Audio/Pinyin
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	load_current_level_character()
+	load_current_level_character.call_deferred()
 	load_progressbar()
 
 func load_current_level_character():
 	var data = LevelManager.current_char_data
 	if data.is_empty() or not data.has("strokes") or data["strokes"] == null:
-		push_error("Level loaded with invalid or missing character data! Redirecting to menu.")
+		push_warning("Level loaded with invalid or missing character data! Redirecting to menu.")
 		# Send the player back to level loading menu instead of crashing
 		get_tree().change_scene_to_file("res://levels/loadlevels.tscn")
 		return
@@ -32,6 +35,13 @@ func load_current_level_character():
 	game_area.get_node("Area").set_split_locked(true)
 	# Extract radicals from the structure, clear them from inside, and scatter them outside
 	extract_and_scatter_radicals(game_area.get_node("Area"))
+	# Add character info
+	var template_text = template.text
+	var formatted_text = template_text.format({
+		"definition": str(LevelManager.current_char_data["definition"]),
+	})
+	template.text = formatted_text
+	pinyin.text = LevelManager.pinyin
 	
 func load_progressbar():
 	progress.max_value = LevelManager.char_queue.size()
@@ -111,6 +121,8 @@ func extract_and_scatter_radicals(root_node: Node) -> void:
 	for i: int in range(cards.size(), safe_slots.size()):
 		var dummy: Control = radical_menu.radical_item_scene.instantiate()
 		scatter_area.add_child(dummy)
+		var random_rad = radical_builder.build_radical(Database.get_random_radical())
+		dummy.setup(random_rad)
 		dummy.size = Vector2(
 			card_width,
 			card_height
@@ -160,3 +172,7 @@ func _on_skip_button_pressed() -> void:
 	AudioManager.play_ui("click_003.ogg")
 	LevelManager.skip()
 	_next_character()
+
+func _on_play_audio_pressed() -> void:
+	AudioManager.play_ui("click_003.ogg")
+	AudioManager.play_pinyin(LevelManager.pinyin)

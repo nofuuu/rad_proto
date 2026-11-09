@@ -27,9 +27,8 @@ func get_radicals() -> Array[Dictionary]:
 	db.query(query)
 	return db.query_result
 
-## Finds a specific radical row by checking the base character 
-## or up to three defined variants.
-## Returns [code]null[/code] if the radical cannot be resolved.
+## Finds a specific radical row by checking the base character or up to three defined variants.
+## Returns null if the radical cannot be resolved.
 func get_radical(radical):
 	var query = """
 	SELECT * FROM radicals
@@ -40,9 +39,22 @@ func get_radical(radical):
 	"""
 	db.query_with_bindings(query, [radical, radical, radical, radical])
 	if db.query_result.size() > 0 :
-		return db.query_result[0]
+		var res = db.query_result[0]
+		var variant_idx = [res.get("character"), res.get("variant_1"), res.get("variant_2"), res.get("variant_3")].find(radical)
+		return [res, variant_idx]
+	else:
+		return [null, -1]
+		
+func get_random_radical():
+	var query = "SELECT * FROM radicals"
+	db.query(query)
+	var results = db.query_result
+	if results.size() > 0:
+		var random_index = randi() % results.size()
+		return results[random_index]
 	else:
 		return null
+	
 
 ## Searches the merged dictionary for characters matching a specific IDS spatial structure pattern.
 ## Returns a formatted matching string or a generic failure string.

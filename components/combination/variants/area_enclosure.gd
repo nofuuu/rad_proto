@@ -1,6 +1,6 @@
 extends InteractionArea
 
-@onready var inner = $Inner
+@onready var inner:InteractionArea = $Inner
 
 const INNER_MARGIN = 0.25
 
@@ -9,6 +9,7 @@ var outer_radical : Radical
 func _ready() -> void:
 	inner.custom_minimum_size.x = size.x - (size.x * INNER_MARGIN) * 2.0
 	inner.custom_minimum_size.y = size.y - (size.y * INNER_MARGIN) * 2.0
+	inner.parent = self
 
 func _drop_data(pos, data):
 	var zone = get_hover_zone(pos)
@@ -50,3 +51,24 @@ func show_hover(zone: String):
 		overlay.size_flags_vertical = SIZE_SHRINK_CENTER
 	else:
 		pass
+		
+
+# ------------------------------------------------------------------------------
+# Unsplit
+# ------------------------------------------------------------------------------
+func unsplit():
+	var scene_parent = get_parent()
+	if scene_parent == null:
+		return
+	var my_index = get_index()
+	inner.owner = null
+	inner.custom_minimum_size = custom_minimum_size
+	inner.size_flags_horizontal = size_flags_horizontal
+	inner.size_flags_vertical = size_flags_vertical
+	inner.reparent(scene_parent)
+	scene_parent.move_child(inner, my_index)
+	inner.position = position
+	if inner is InteractionArea:
+		inner.parent = self.parent
+	queue_free()
+	Signals.composition_changed.emit()

@@ -7,7 +7,7 @@ const IDS_OPERATORS = {
 	"⿺": 2, "⿻": 2
 }
 
-func build_radical(rad) -> Radical:
+func build_radical(rad, variant_index = 0) -> Radical:
 	var radical = Radical.new()
 	radical.number = rad.number
 	radical.character = rad.character
@@ -20,14 +20,19 @@ func build_radical(rad) -> Radical:
 	#radical.shape = rad.shape
 	radical.svg_strokes = JSON.parse_string(rad.svg_strokes)
 	radical.svg_medians = JSON.parse_string(rad.svg_medians)
+	radical.current_variant = variant_index
 	return radical
 	
 func add_variant(radical: Radical, rad, num: int):
 	var variant = rad.get("variant_%d" % num)
 	var pos = rad.get("variant_%d_pos" % num)
+	var strokes = rad.get("variant_%d_strokes" % num)
+	var medians = rad.get("variant_%d_medians" % num)
 	radical.variants.append({
 		"var": variant,
-		"pos": pos
+		"pos": pos,
+		"strokes": strokes,
+		"medians": medians
 	})
 	
 func build_fallback_radical(strokes: Array[String], chara: String) -> Radical:
@@ -114,10 +119,10 @@ func _parse_ids_to_area(chars: String, index: int, area: InteractionArea, groupe
 	# Leaf Node (Radical Component)
 	var target_id = state["current_radical_id"]
 	state["current_radical_id"] += 1
-	var rad = Database.get_radical(chara)
+	var res = Database.get_radical(chara)
 	# Core radical exists directly inside the radicals database
-	if rad != null:
-		var radical = build_radical(rad)
+	if res[0] != null:
+		var radical = build_radical(res[0], res[1])
 		area.set_radical({"radical": radical})
 		return index + 1
 	# Radical component is missing or explicitly defined as null/unknown ('？')

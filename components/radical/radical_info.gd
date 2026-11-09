@@ -17,7 +17,7 @@ func _on_play_audio_pressed() -> void:
 func _empty_info() -> void:
 	radical_name.text = ""
 	pinyin.text = ""
-	radical.setup([])
+	radical.setup_strokes([])
 
 func _on_radical_selected(data):
 	if not data:
@@ -25,4 +25,4 @@ func _on_radical_selected(data):
 		return
 	radical_name.text = data.radical_name
 	pinyin.text = data.pinyin
-	radical.setup(data.svg_strokes)
+	radical.setup_strokes(data.svg_strokes)

@@ -54,6 +54,7 @@ folder_colors={
 [gui]
 
 theme/custom="uid://mcv1vi4lpy6n"
+theme/custom_font="uid://b4ncgrnm0qr6q"
 
 [physics]
 

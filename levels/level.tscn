@@ -173,6 +173,52 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_u55m2")
 [node name="Radical" parent="Preview/Area" unique_id=1677251188 instance=ExtResource("4_gjl0y")]
 layout_mode = 2
 
+[node name="CharacterInfo" type="RichTextLabel" parent="Preview" unique_id=1772660788]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -161.5
+offset_top = 11.0
+offset_right = 161.5
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[color=#b0c4de][font_size=24]{definition}[/font_size][/color]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Audio" type="VBoxContainer" parent="Preview" unique_id=2111733260]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 26.0
+offset_top = -12.5
+offset_right = 80.0
+offset_bottom = 68.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="PlayAudio" type="Button" parent="Preview/Audio" unique_id=1583852689]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "🕪"
+
+[node name="Pinyin" type="Label" parent="Preview/Audio" unique_id=353595334]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "bing4"
+horizontal_alignment = 1
+
 [node name="CheckAnswerButton" type="Button" parent="." unique_id=964646945]
 layout_mode = 1
 anchors_preset = 7
@@ -238,5 +284,6 @@ show_percentage = false
 
 [connection signal="gui_input" from="CombinationArea" to="CombinationArea" method="_on_gui_input"]
 [connection signal="gui_input" from="Preview" to="Preview" method="_on_gui_input"]
+[connection signal="pressed" from="Preview/Audio/PlayAudio" to="." method="_on_play_audio_pressed"]
 [connection signal="pressed" from="CheckAnswerButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

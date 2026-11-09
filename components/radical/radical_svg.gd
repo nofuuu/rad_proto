@@ -9,8 +9,22 @@ var fit_padding: float = 0.8
 func _ready() -> void:
 	item_rect_changed.connect(func(): setup_smooth_svg($"."))
 
-func setup(new_strokes):
+## Setup using a raw Array of strokes directly
+func setup_strokes(new_strokes: Array) -> void:
 	strokes = new_strokes
+	setup_smooth_svg($".")
+
+## Setup using a full Radical object (handles variants automatically)
+func setup(data: Radical) -> void:
+	# Check current variant
+	if data.current_variant == 0:
+		strokes = data.svg_strokes
+	else:
+		var var_index = data.current_variant - 1
+		if var_index >= 0 and var_index < data.variants.size():
+			var stroke_json = data.variants[var_index].get("strokes", "")
+			if stroke_json is String and not stroke_json.is_empty():
+				strokes = JSON.parse_string(stroke_json)
 	setup_smooth_svg($".")
 	
 func setup_smooth_svg(texture_rect: TextureRect) -> void:

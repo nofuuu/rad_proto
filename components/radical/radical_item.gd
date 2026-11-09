@@ -13,7 +13,7 @@ func setup(radical_data: Radical) -> void:
 	# Wait for the node to be ready in the tree before setting UI elements
 	if not is_node_ready():
 		await ready
-	radical.setup(data.svg_strokes)
+	radical.setup(data)
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	var preview = duplicate()

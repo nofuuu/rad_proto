@@ -3,6 +3,7 @@ extends Node
 var char_queue: Array[String] = []
 var current_char_index = 0
 var current_char_data = {}
+var pinyin = ""
 
 var skipped: int = 0
 var skipped_chars: Array[String] = []
@@ -15,16 +16,27 @@ func reset_queue(new_queue: Array[String]):
 	char_queue = new_queue
 	current_char_index = 0
 	current_char_data = Database.get_character_data(char_queue[current_char_index])
+	get_pinyin()
 	skipped = 0
 	skipped_chars.clear()
 	mistakes = 0
 	mistake_chars.clear()
+	
+# Only 1 pinyin pronunciation from stored JSON is handled right now
+func get_pinyin():
+	var pinyin_raw = LevelManager.current_char_data.get("pinyin", "[]")
+	if pinyin_raw.is_empty() or pinyin_raw == "[]":
+		return
+	var pinyin_array = JSON.parse_string(pinyin_raw)
+	if pinyin_array and pinyin_array.size() > 0:
+		pinyin = str(pinyin_array[0])
 
 # Advance to the next character
 func advance_character():
 	if has_next_character():
 		current_char_index += 1
 		current_char_data = Database.get_character_data(char_queue[current_char_index])
+		get_pinyin()
 	
 # Helper to check if there are more characters left
 func has_next_character() -> bool:
