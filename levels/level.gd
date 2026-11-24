@@ -153,6 +153,7 @@ func check_win_condition() -> void:
 
 ## Recursively parses nodes evaluating player slots against expected meta configurations
 func _is_character_correct(node: Node) -> bool:
+	var is_correct = true
 	for child in node.get_children():
 		if child is InteractionArea:
 			# Verify if this specific slot was originally assigned an expected radical answer
@@ -161,11 +162,12 @@ func _is_character_correct(node: Node) -> bool:
 				var current = child.radical
 				# If the slot is completely empty, or the placed radical doesn't match the answer
 				if current == null or current != expected:
-					return false
+					child.self_modulate = Color.RED
+					is_correct = false
 		# Continue scanning nested sub-components inside the layout branch
 		if not _is_character_correct(child):
-			return false
-	return true
+			is_correct = false
+	return is_correct
 
 
 func _on_skip_button_pressed() -> void:

@@ -116,7 +116,7 @@ func create_split(type : String, count:=2):
 		"⿱","⿳":
 			container = VBoxContainer.new()
 		_:
-			print("unknown split type, adding ⿰ HBox for now")
+			print("unsupported split type: %s, adding ⿰ HBox for now" % type)
 			container = HBoxContainer.new()
 	split_root.add_child(container)
 	container.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)

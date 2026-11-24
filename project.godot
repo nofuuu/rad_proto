@@ -43,6 +43,7 @@ folder_colors={
 "res://LICENSES/": "red",
 "res://addons/": "gray",
 "res://audio/": "orange",
+"res://builds/": "gray",
 "res://components/": "teal",
 "res://data/": "gray",
 "res://globals/": "red",

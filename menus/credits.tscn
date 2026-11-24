@@ -12,19 +12,39 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xlg2h")
 
-[node name="Text" type="RichTextLabel" parent="." unique_id=313547767]
+[node name="Topmenu" parent="." unique_id=2042562126 instance=ExtResource("2_jkw7x")]
+custom_text = "CREDITS"
+info_child_text = "
+
+
+
+These are credits for the third party assets in the game.
+You can also check out the project on github!"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2055683440]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-offset_left = -325.0
-offset_top = 105.0
-offset_right = 325.0
-offset_bottom = 1263.0
+anchor_bottom = 1.0
+offset_left = -310.0
+offset_top = -1168.0
+offset_right = 310.0
+offset_bottom = -37.0
 grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Text" type="RichTextLabel" parent="ScrollContainer" unique_id=313547767]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "[center][font_size=30][color=#c0c4de]THIRD-PARTY CREDITS[/color][/font_size][/center]
+text = "[color=#b0c4de][font_size=24]Game Development[/font_size][/color]
+Noora Kemppainen
+
+[center][font_size=30][color=#c0c4de]THIRD-PARTY CREDITS[/color][/font_size][/center]
 [color=#b0c4de][font_size=24] Voice Assets[/font_size][/color]
 This game uses audio assets from the \"audio-cmn\" project by Hugo Lopez (PLIDAM, INALCO).
 
@@ -60,13 +80,4 @@ HSK 3.0 syllabus data by Gushi
 "
 fit_content = true
 
-[node name="Topmenu" parent="." unique_id=2042562126 instance=ExtResource("2_jkw7x")]
-custom_text = "CREDITS"
-info_child_text = "
-
-
-
-These are credits for the third party assets in the game.
-You can also check out the project on github!"
-
-[connection signal="meta_clicked" from="Text" to="." method="_on_text_meta_clicked"]
+[connection signal="meta_clicked" from="ScrollContainer/Text" to="." method="_on_text_meta_clicked"]

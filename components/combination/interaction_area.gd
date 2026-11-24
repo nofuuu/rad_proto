@@ -36,6 +36,7 @@ func _lock_interaction_areas(node: Node, locked: bool) -> void:
 # Radical
 # ------------------------------------------------------------------------------
 func set_radical(data):
+	self_modulate = Color.WHITE # For resetting level colorings
 	radical = data.get("radical")
 	if radical:
 		radical_svg.visible = true
